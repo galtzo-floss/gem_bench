@@ -1,9 +1,5 @@
 # 🪑 GemBench
 
-<div id="badges">
-
-<div align="center">
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/gem/v/gem_bench.svg)](https://rubygems.org/gems/gem_bench)
 [![Downloads Today](https://img.shields.io/gem/rd/gem_bench.svg)](https://github.com/pboling/gem_bench)
@@ -33,11 +29,7 @@
 [🚎an-wf]: https://github.com/pboling/gem_bench/actions/workflows/ancient.yml
 [🚎an-wfi]: https://github.com/pboling/gem_bench/actions/workflows/ancient.yml/badge.svg
 
-</div>
-
 -----
-
-<div align="center">
 
 [![Liberapay Patrons][⛳liberapay-img]][⛳liberapay]
 [![Sponsor Me on Github][🖇sponsor-img]][🖇sponsor]
@@ -55,13 +47,6 @@
 [🖇kofi]: https://ko-fi.com/O5O86SNP4
 [🖇patreon-img]: https://img.shields.io/badge/patreon-donate-yellow.svg
 [🖇patreon]: https://patreon.com/galtzo
-
-<span class="badge-buymealatte">
-<a href="https://www.buymeacoffee.com/pboling"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a latte&emoji=&slug=pboling&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
-</span>
-
-</div>
-</div>
 
 [benchmarking-example]: https://github.com/panorama-ed/memo_wise/pull/339
 
@@ -100,9 +85,8 @@ Regex search through all of a project's source code, including installed Bundler
 
 | Primary Namespace | `GemBench`                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| gem name          | [gem_bench](https://rubygems.org/gems/gem_bench)                                                                                                                                                                                                                                                                                                                                                                                                      |
 | code triage       | [![Open Source Helpers](https://www.codetriage.com/pboling/gem_bench/badges/users.svg)](https://www.codetriage.com/pboling/gem_bench)                                                                                                                                                                                                                                                                                                                 |
-| documentation     | [on Github.com][homepage], [on Rdoc.info][documentation]                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| documentation     | [on Github.com][homepage], [on RubyDoc.info][documentation]                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | expert support    | [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/peterboling?utm_source=github&utm_medium=button&utm_term=peterboling&utm_campaign=github)                                                                                                                                                                                                                                                 |
 | `...` 💖          | [![Liberapay Patrons][⛳liberapay-img]][⛳liberapay] [![Sponsor Me][🖇sponsor-img]][🖇sponsor] [![Follow Me on LinkedIn][🖇linkedin-img]][🖇linkedin] [![Find Me on WellFound:][✌️wellfound-img]][✌️wellfound] [![Find Me on CrunchBase][💲crunchbase-img]][💲crunchbase] [![My LinkTree][🌳linktree-img]][🌳linktree] [![Follow Me on Ruby.Social][🐘ruby-mast-img]][🐘ruby-mast] [![Tweet @ Peter][🐦tweet-img]][🐦tweet] [💻][coderme] [🌏][aboutme] |
 
@@ -613,13 +597,17 @@ A future version will also look for initializers, because gems which have code t
 
 ## 🤝 Contributing
 
-See [CONTRIBUTING.md][🤝contributing]
+If you need some ideas of where to help, you could work on adding more code coverage,
+or if it is already 💯 (see [below](#code-coverage)) then check [issues][🤝issues], or [PRs][🤝pulls],
+or use the gem and think about how it could be better.
 
+Also, see [CONTRIBUTING.md][🤝contributing].
+
+[🤝issues]: https://github.com/pboling/gem_bench/issues
+[🤝pulls]: https://github.com/pboling/gem_bench/pulls
 [🤝contributing]: CONTRIBUTING.md
 
 ### Code Coverage
-
-If you need some ideas of where to help, you could work on adding more code coverage.
 
 [![Coverage Graph][🔑codecov-g]][🖇codecov]
 
@@ -703,5 +691,19 @@ See [LICENSE.txt][📄license] for the official [Copyright Notice][📄copyright
 [railsbling]: http://www.railsbling.com
 [peterboling]: http://www.peterboling.com
 [bundle-group-pattern]: https://gist.github.com/pboling/4564780
-[documentation]: http://rdoc.info/github/pboling/gem_bench/frames
+[documentation]: http://rubydoc.info/gems/gem_bench
 [homepage]: https://github.com/pboling/gem_bench
+
+## 🤑 One more thing
+
+You made it to the bottom of the page,
+so perhaps you'll indulge me for another 20 seconds.
+I maintain many dozens of gems, including this one,
+because I want Ruby to be a great place for people to solve problems, big and small.
+Please consider supporting my efforts via the giant yellow link below,
+or one of the others at the head of this README.
+
+[![Buy me a latte][🖇buyme-img]][🖇buyme]
+
+[🖇buyme-img]: https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20latte&emoji=&slug=pboling&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff
+[🖇buyme]: https://www.buymeacoffee.com/pboling
