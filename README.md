@@ -1,4 +1,4 @@
-# GemBench
+# 🪑 GemBench
 
 <div id="badges">
 
