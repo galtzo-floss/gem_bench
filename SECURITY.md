@@ -7,8 +7,8 @@
 | 2.x     | ✅         |
 | 1.x     | ❌         |
 
-## Reporting a Vulnerability
+## Security contact information
 
-Peter Boling is the primary maintainer of this gem. Please find a way
-to [contact him directly](https://railsbling.com/contact) to report the issue. Include as much relevant information as
-possible.
+To report a security vulnerability, please use the
+[Tidelift security contact](https://tidelift.com/security).
+Tidelift will coordinate the fix and disclosure.
