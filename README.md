@@ -560,7 +560,7 @@ See [LICENSE.md][📄license] for the official copyright notice.
 <summary>Copyright holders</summary>
 
 - Copyright (c) 2013 John Joseph Bachir
-- Copyright (c) 2013-2014, 2017-2019, 2023-2024, 2026 Peter Boling
+- Copyright (c) 2013-2014, 2017-2019, 2023-2024, 2026 Peter H. Boling
 
 </details>
 
