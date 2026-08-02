@@ -279,27 +279,6 @@ PATH
       tree_haver (= 7.1.0)
       version_gem (~> 1.1, >= 1.1.14)
 
-PATH
-  remote: /var/home/pboling/src/my/galtzo-floss/yard-fence
-  specs:
-    yard-fence (0.9.7)
-      rdoc (>= 6.11, < 8)
-      version_gem (~> 1.1, >= 1.1.15)
-      yard (~> 0.9, >= 0.9.37)
-
-PATH
-  remote: /var/home/pboling/src/my/galtzo-floss/yard-timekeeper
-  specs:
-    yard-timekeeper (0.2.5)
-      version_gem (~> 1.1, >= 1.1.15)
-
-PATH
-  remote: /var/home/pboling/src/my/galtzo-floss/yard-yaml
-  specs:
-    yard-yaml (0.2.4)
-      version_gem (~> 1.1, >= 1.1.15)
-      yaml-converter (~> 0.2)
-
 GEM
   remote: https://gem.coop/
   specs:
@@ -686,6 +665,10 @@ GEM
       kramdown-parser-gfm (~> 1.1)
       version_gem (~> 1.1, >= 1.1.14)
     yard (0.9.45)
+    yard-fence (0.9.7)
+      rdoc (>= 6.11, < 8)
+      version_gem (~> 1.1, >= 1.1.14)
+      yard (~> 0.9, >= 0.9.37)
     yard-junk (0.1.0)
       benchmark
       ostruct
@@ -696,6 +679,11 @@ GEM
       zeitwerk (~> 2.6)
     yard-relative_markdown_links (0.6.0)
       nokogiri (>= 1.14.3, < 2)
+    yard-timekeeper (0.2.5)
+      version_gem (~> 1.1, >= 1.1.14)
+    yard-yaml (0.2.4)
+      version_gem (~> 1.1, >= 1.1.14)
+      yaml-converter (~> 0.2)
     zeitwerk (2.8.3)
     zlib (3.2.3)
 
@@ -776,12 +764,12 @@ DEPENDENCIES
   yaml-converter (~> 0.2, >= 0.2.4)
   yaml-merge!
   yard (~> 0.9, >= 0.9.45, >= 0.9.34)
-  yard-fence!
+  yard-fence (~> 0.9, >= 0.9.7)
   yard-junk (~> 0.1, >= 0.1.0)
   yard-lint (~> 1.10, >= 1.10.2)
   yard-relative_markdown_links (~> 0.6)
-  yard-timekeeper!
-  yard-yaml!
+  yard-timekeeper (~> 0.2, >= 0.2.5)
+  yard-yaml (~> 0.2, >= 0.2.4)
   zip-merge!
 
 BUNDLED WITH
