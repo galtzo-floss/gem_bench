@@ -2,7 +2,7 @@
 require "version_gem/ruby"
 
 # RSpec Configs
-require "config/byebug"
+require "debug"
 require "config/rspec/rspec_block_is_expected"
 require "config/rspec/rspec_core"
 require "config/rspec/version_gem"
