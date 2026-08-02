@@ -2,7 +2,7 @@ RSpec.describe GemBench::Player do
   let(:options) {
     {
       name: "gem_bench",
-      version: "0.1.0",
+      version: "0.1.0"
     }
   }
   let(:instance) { described_class.new(options) }
@@ -18,7 +18,7 @@ RSpec.describe GemBench::Player do
       {
         name: "gem_bench",
         version: "0.1.0",
-        exclude_file_pattern: /banana/,
+        exclude_file_pattern: /banana/
       }
     }
 

@@ -20,7 +20,7 @@ RSpec.describe GemBench::Team do
       let(:options) {
         {
           gemfile_path: File.join(File.dirname(__FILE__), "..", "support", "gemfile.rb"),
-          verbose: "extra",
+          verbose: "extra"
         }
       }
 
@@ -31,7 +31,7 @@ RSpec.describe GemBench::Team do
 
     context "when excluded" do
       it "excludes the excluded gems" do
-        expect(instance.excluded.map(&:first).sort).to eq(%w(bundler gem_bench))
+        expect(instance.excluded.map(&:first).sort).to eq(%w[bundler gem_bench])
       end
     end
 
@@ -44,8 +44,8 @@ RSpec.describe GemBench::Team do
             loaded_gems: [["rspec", "4.0.0"]],
             gem_paths: [],
             gemfile_path: "",
-            "check_gemfile?": false,
-          ),
+            check_gemfile?: false
+          )
         )
         expect(instance.excluded.map(&:first).sort).to be_empty
         expect(GemBench::Scout).to have_received(:new)
@@ -71,7 +71,7 @@ RSpec.describe GemBench::Team do
         let(:options) {
           {
             gemfile_path: File.join(File.dirname(__FILE__), "..", "support", "gemfile.rb"),
-            verbose: "extra",
+            verbose: "extra"
           }
         }
 
@@ -92,7 +92,7 @@ RSpec.describe GemBench::Team do
         let(:options) {
           {
             gemfile_path: File.join(File.dirname(__FILE__), "..", "support", "gemfile.rb"),
-            verbose: "extra",
+            verbose: "extra"
           }
         }
 
@@ -115,7 +115,7 @@ RSpec.describe GemBench::Team do
             gemfile_path: File.join(File.dirname(__FILE__), "..", "support", "gemfile.rb"),
             verbose: "extra",
             bad_ideas: false,
-            look_for_regex: /DRAGONS/i,
+            look_for_regex: /DRAGONS/i
           }
         }
 
@@ -130,7 +130,7 @@ RSpec.describe GemBench::Team do
               verbose: "extra",
               bad_ideas: false,
               check_gemfile: true,
-              look_for_regex: /DRAGONS/i,
+              look_for_regex: /DRAGONS/i
             }
           }
 
@@ -146,7 +146,7 @@ RSpec.describe GemBench::Team do
             {
               gemfile_path: File.join(File.dirname(__FILE__), "..", "support", "gemfile.rb"),
               verbose: "extra",
-              bad_ideas: true,
+              bad_ideas: true
             }
           }
 
@@ -160,7 +160,7 @@ RSpec.describe GemBench::Team do
             {
               gemfile_path: File.join(File.dirname(__FILE__), "..", "support", "gemfile.rb"),
               verbose: "extra",
-              check_gemfile: true,
+              check_gemfile: true
             }
           }
 
@@ -174,7 +174,7 @@ RSpec.describe GemBench::Team do
                 gemfile_path: File.join(File.dirname(__FILE__), "..", "support", "gemfile.rb"),
                 verbose: "extra",
                 check_gemfile: true,
-                bad_ideas: nil,
+                bad_ideas: nil
               }
             }
 
@@ -189,7 +189,7 @@ RSpec.describe GemBench::Team do
                 gemfile_path: File.join(File.dirname(__FILE__), "..", "support", "gemfile.rb"),
                 verbose: "extra",
                 check_gemfile: true,
-                bad_ideas: nil,
+                bad_ideas: nil
               }
             }
 
@@ -203,7 +203,7 @@ RSpec.describe GemBench::Team do
                   gemfile_path: File.join(File.dirname(__FILE__), "..", "support", "gemfile.rb"),
                   verbose: "extra",
                   check_gemfile: false,
-                  bad_ideas: nil,
+                  bad_ideas: nil
                 }
               }
 
@@ -218,7 +218,7 @@ RSpec.describe GemBench::Team do
           let(:options) {
             {
               gemfile_path: File.join(File.dirname(__FILE__), "..", "support", "gemfile.rb"),
-              verbose: "extra",
+              verbose: "extra"
             }
           }
 
@@ -260,7 +260,7 @@ RSpec.describe GemBench::Team do
             allow(GemBench::Scout).to receive(:new).and_return(scout)
             block_is_expected.to not_raise_error.and output(
               include(
-                <<~OUT.chomp,
+                <<~OUT.chomp
                   [GemBench] Evaluated 1 loaded gems and found 1 which may be able to skip boot loading (require: false).
                   *** => WARNING <= ***: Be careful adding non-primary dependencies to your Gemfile as it is generally a bad idea.
                   To safely evaluate a Gemfile:
@@ -268,7 +268,7 @@ RSpec.describe GemBench::Team do
                   \t2. Make sure the gem is actually a dependency in the Gemfile
                   \t[BE CAREFUL] 1) gem 'test-unit', '~> 3.6', require: false
                 OUT
-              ),
+              )
             ).to_stdout
             expect(GemBench::Scout).to have_received(:new)
           end
@@ -283,7 +283,7 @@ RSpec.describe GemBench::Team do
               allow(GemBench::Scout).to receive(:new).and_return(scout)
               block_is_expected.to not_raise_error.and output(
                 include(
-                  <<~OUT.chomp,
+                  <<~OUT.chomp
                     [GemBench] Evaluated 1 loaded gems and found 1 which may be able to skip boot loading (require: false).
                     *** => WARNING <= ***: Be careful adding non-primary dependencies to your Gemfile as it is generally a bad idea.
                     To safely evaluate a Gemfile:
@@ -291,7 +291,7 @@ RSpec.describe GemBench::Team do
                     \t2. Make sure the gem is actually a dependency in the Gemfile
                     \t[BE CAREFUL] 1) gem 'test-unit', '~> 3.6', require: false
                   OUT
-                ),
+                )
               ).to_stdout
               expect(GemBench::Scout).to have_received(:new)
             end
@@ -304,7 +304,7 @@ RSpec.describe GemBench::Team do
                 allow(GemBench::Scout).to receive(:new).and_return(scout)
                 block_is_expected.to not_raise_error.and output(
                   include(
-                    <<~OUT.chomp,
+                    <<~OUT.chomp
                       [GemBench] Will show bad ideas.  Be Careful.
                       [GemBench] Detected 1 loaded gems
                       [GemBench] Found no gems that need to load at boot time.
@@ -313,7 +313,7 @@ RSpec.describe GemBench::Team do
                       *** => WARNING <= ***: Be careful adding non-primary dependencies to your Gemfile as it is generally a bad idea.
                       \t[BE CAREFUL] 1) gem 'test-unit', '~> 3.6', require: false
                     OUT
-                  ),
+                  )
                 ).to_stdout
                 expect(GemBench::Scout).to have_received(:new)
               end
@@ -364,7 +364,7 @@ RSpec.describe GemBench::Team do
             allow(GemBench::Scout).to receive(:new).and_return(scout)
             block_is_expected.to not_raise_error.and output(
               include(
-                <<~OUT.chomp,
+                <<~OUT.chomp
                   [GemBench] Evaluated 1 loaded gems and found 1 which may be able to skip boot loading (require: false).
                   *** => WARNING <= ***: Be careful adding non-primary dependencies to your Gemfile as it is generally a bad idea.
                   To safely evaluate a Gemfile:
@@ -372,7 +372,7 @@ RSpec.describe GemBench::Team do
                   \t2. Make sure the gem is actually a dependency in the Gemfile
                   \t[BE CAREFUL] 1) rspec had no files to evaluate.
                 OUT
-              ),
+              )
             ).to_stdout
             expect(GemBench::Scout).to have_received(:new)
           end
@@ -423,8 +423,8 @@ RSpec.describe GemBench::Team do
           {
             name: "pry",
             version: "0.14.2",
-            exclude_file_pattern: GemBench::EXCLUDE_FILE_PATTERN_REGEX_PROC.call("pry"),
-          },
+            exclude_file_pattern: GemBench::EXCLUDE_FILE_PATTERN_REGEX_PROC.call("pry")
+          }
         )
       end
 

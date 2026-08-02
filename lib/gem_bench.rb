@@ -3,13 +3,13 @@ require "version_gem"
 require "bundler" # This gem utilizes bundler as a tool.
 
 # this library
-require_relative "gem_bench/version"
 require_relative "gem_bench/scout"
 require_relative "gem_bench/player"
 require_relative "gem_bench/team"
 require_relative "gem_bench/gemfile_line_tokenizer"
 require_relative "gem_bench/strict_version_gem"
 require_relative "gem_bench/strict_version_requirement"
+require_relative "gem_bench/version"
 
 module GemBench
   USAGE = "[GemBench] Usage: Require another gem in this session to evaluate it.\n\tExample:\n\t\trequire 'rails'\n\t\tGemBench.check({verbose: true})\n"
@@ -22,13 +22,13 @@ module GemBench
   DO_NOT_SCAN = []
   PLAYER_STATES = {
     starter: :starter,
-    bench: :bench,
+    bench: :bench
   }
 
   class << self
     def check(verbose: false, gemfile_path: nil)
       options = {
-        verbose: verbose,
+        verbose: verbose
       }
       options[:gemfile_path] = gemfile_path if gemfile_path
       GemBench::Team.new(**options)
@@ -36,7 +36,7 @@ module GemBench
 
     def versions_present?(verbose: false, gemfile_path: nil)
       options = {
-        verbose: verbose,
+        verbose: verbose
       }
       options[:gemfile_path] = gemfile_path if gemfile_path
       GemBench::StrictVersionRequirement.new(**options).versions_present?
@@ -44,7 +44,7 @@ module GemBench
 
     def list_missing_version_constraints(verbose: false, gemfile_path: nil)
       options = {
-        verbose: verbose,
+        verbose: verbose
       }
       options[:gemfile_path] = gemfile_path if gemfile_path
       GemBench::StrictVersionRequirement.new(**options).list_missing_version_constraints
@@ -57,7 +57,7 @@ module GemBench
       options = {
         verbose: verbose,
         look_for_regex: look_for_regex,
-        exclude_file_pattern_regex_proc: exclude_file_pattern_regex_proc,
+        exclude_file_pattern_regex_proc: exclude_file_pattern_regex_proc
       }
       options[:gemfile_path] = gemfile_path if gemfile_path
       GemBench::Team.new(**options)

@@ -9,13 +9,32 @@ require "config/rspec/version_gem"
 
 # Last thing before loading this gem is to setup code coverage
 begin
-  # This does not require "simplecov", but
   require "kettle-soup-cover"
+  if Kettle::Soup::Cover::DO_COV
+    # Requiring simplecov loads the project-local `.simplecov`.
+    require "simplecov"
+    require "kettle/soup/cover/config"
+    SimpleCov.start
+  end
   #   this next line has a side-effect of running `.simplecov`
-  require "simplecov" if defined?(Kettle::Soup::Cover) && Kettle::Soup::Cover::DO_COV
 rescue LoadError
+  # check the error message and re-raise when unexpected
   nil
 end
 
+# External RSpec & related config
+require "kettle/test/rspec"
+# `kettle/test/rspec` installs harness helpers documented in spec/README.md.
 # This library
 require "gem_bench"
+RSpec.configure do |config|
+  # Enable flags like --only-failures and --next-failure
+  config.example_status_persistence_file_path = ".rspec_status"
+
+  # Disable RSpec exposing methods globally on `Module` and `main`
+  config.disable_monkey_patching!
+
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
+end

@@ -36,6 +36,7 @@ module GemBench
     ]
     # A comment preceding the require: false anywhere on the line should not be considered an active require: false
     extend Forwardable
+
     def_delegators :@scout, :gem_paths, :gemfile_path, :check_gemfile?, :loaded_gems
     attr_reader :scout, :look_for_regex
     attr_accessor :all,
@@ -56,7 +57,7 @@ module GemBench
       @benching = @check_type == :bench
       @scout = GemBench::Scout.new(
         check_gemfile: options.fetch(:check_gemfile, benching?),
-        gemfile_path: options.fetch(:gemfile_path, "#{Dir.pwd}/Gemfile"),
+        gemfile_path: options.fetch(:gemfile_path, "#{Dir.pwd}/Gemfile")
       )
       @exclude_file_pattern_regex_proc = options[:exclude_file_pattern_regex_proc].respond_to?(:call) ? options[:exclude_file_pattern_regex_proc] : GemBench::EXCLUDE_FILE_PATTERN_REGEX_PROC
       # Among the loaded gems there may be some that did not need to be.
@@ -78,9 +79,7 @@ module GemBench
       end
       puts "[GemBench] Will search for gems in #{gem_paths.inspect}\n#{if benching?
                                                                          check_gemfile? ? "[GemBench] Will check Gemfile at #{gemfile_path}.\n" : "[GemBench] No Gemfile found.\n"
-                                                                       else
-                                                                         ""
-                                                                       end}#{bad_ideas ? "[GemBench] Will show bad ideas.  Be Careful.\n" : ""}[GemBench] Detected #{all.length} loaded gems#{exclusions}"
+                                                                       end}#{"[GemBench] Will show bad ideas.  Be Careful.\n" if bad_ideas}[GemBench] Detected #{all.length} loaded gems#{exclusions}"
       compare_gemfile if benching? && check_gemfile?
       self.print if verbose
     end
@@ -199,7 +198,7 @@ module GemBench
         player = GemBench::Player.new({
           name: player_data[0],
           version: player_data[1],
-          exclude_file_pattern: exclude_file_pattern,
+          exclude_file_pattern: exclude_file_pattern
         })
         check(player)
         add_to_roster(player)

@@ -6,9 +6,9 @@ module GemBench
   class GemfileLineTokenizer
     GEM_REGEX = /\A\s*gem\s+([^#]*).*\Z/.freeze # run against gem lines like: "gem 'aftership', # Ruby SDK of AfterShip API."
     # HEREDOC support? (?<op_heredoc><<[~-]?[A-Z0-9_]+\.?[a-z0-9_]+)
-    OP_QUO_REG_PROC = lambda { |idx = nil| /((?<op_quo#{idx}>['"]{1})|(?<op_pct_q#{idx}>%[Qq]?[\(\[\{]{1})|(?<op_heredoc><<[~-]?[A-Z0-9_]+\.?[a-z0-9_]+))/x }
+    OP_QUO_REG_PROC = lambda { |idx = nil| /((?<op_quo#{idx}>['"]{1})|(?<op_pct_q#{idx}>%[Qq]?[(\[{]{1})|(?<op_heredoc><<[~-]?[A-Z0-9_]+\.?[a-z0-9_]+))/x }
     # No close for the heredoc, as it will be on a different line...
-    CL_QUO_REG_PROC = lambda { |idx = nil| /((?<cl_quo#{idx}>['"])|(?<cl_pct_q#{idx}>[\)\]\}]{1}))/x }
+    CL_QUO_REG_PROC = lambda { |idx = nil| /((?<cl_quo#{idx}>['"])|(?<cl_pct_q#{idx}>[)\]}]{1}))/x }
     GEM_NAME_REGEX = /\A\s*gem\s+#{OP_QUO_REG_PROC.call.source}(?<name>[^'")]*)#{CL_QUO_REG_PROC.call.source}?.*\Z/.freeze # run against gem lines like: "gem 'aftership', # Ruby SDK of AfterShip API."
     VERSION_CONSTRAINT = /#{OP_QUO_REG_PROC.call.source}(?<version>[^'")]*)#{CL_QUO_REG_PROC.call.source}/.freeze
     GEMFILE_HASH_CONFIG_KEY_REGEX_PROC = lambda { |key|
@@ -59,7 +59,7 @@ module GemBench
       pct_q: true,
       # We could try to support HEREDOC via parsing the lines following in all_lines, but... ugh.
       heredoc: false,
-      unknown: false,
+      unknown: false
     }.freeze
     attr_reader :line
     attr_reader :relevant_lines, :is_gem, :all_lines, :index, :tokens, :version_type, :name, :parse_success, :valid
@@ -170,7 +170,7 @@ module GemBench
       enhance_version(
         line.match(VERSION_PATH),
         :path,
-        :path,
+        :path
       )
     end
 
@@ -182,7 +182,7 @@ module GemBench
       enhance_version(
         line.match(VERSION_GIT),
         :git,
-        :git,
+        :git
       )
     end
 
@@ -209,7 +209,7 @@ module GemBench
       enhance_version(
         line.match(matcher),
         :github,
-        :github,
+        :github
       )
     end
 
@@ -224,7 +224,7 @@ module GemBench
       enhance_version(
         line.match(VERSION_GIT_REF),
         :ref,
-        :git_ref,
+        :git_ref
       )
     end
 
@@ -236,7 +236,7 @@ module GemBench
       enhance_version(
         line.match(VERSION_GIT_TAG),
         :tag,
-        :git_tag,
+        :git_tag
       )
     end
 
@@ -248,7 +248,7 @@ module GemBench
       enhance_version(
         line.match(VERSION_GIT_BRANCH),
         :branch,
-        :git_branch,
+        :git_branch
       )
     end
 

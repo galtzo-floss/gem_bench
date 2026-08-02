@@ -6,7 +6,7 @@ module GemBench
     attr_reader :gem_paths, :gemfile_path, :gemfile_lines, :gemfile_trash, :loaded_gems
 
     def initialize(check_gemfile: nil, **options)
-      @check_gemfile = check_gemfile.nil? ? true : check_gemfile
+      @check_gemfile = check_gemfile.nil? || check_gemfile
       @gemfile_path = options.fetch(:gemfile_path, "#{Dir.pwd}/Gemfile")
       gem_lookup_paths_from_bundler
       gem_lines_from_gemfile

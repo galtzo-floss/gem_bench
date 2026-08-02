@@ -1,0 +1,29 @@
+{
+  "- 51.72% documented\n### Added": [
+    {
+      "file": "CHANGELOG.md",
+      "lines": [
+        133,
+        148
+      ]
+    }
+  ],
+  ">> team = GemBench.check({verbose: true})\n[GemBench] Will search for gems in [\"/Users/pboling/.rvm/gems/ruby-1.9.3-head@foss/gems\", \"/Users/pboling/.rvm/gems/ruby-1.9.3-head@global/gems\", \"/Users/pboling/.rvm/gems/ruby-1.9.3-head@foss/bundler/gems\"]": [
+    {
+      "file": "README.md",
+      "lines": [
+        202,
+        221
+      ]
+    }
+  ],
+  "[GemBench] Will search for gems in [\"/Users/pboling/.rvm/gems/ruby-1.9.3-head@foss/gems\", \"/Users/pboling/.rvm/gems/ruby-1.9.3-head@global/gems\", \"/Users/pboling/.rvm/gems/ruby-1.9.3-head@foss/bundler/gems\"]\n[GemBench] Will check Gemfile at /Users/pboling/Documents/src/my/gem_bench/Gemfile.": [
+    {
+      "file": "README.md",
+      "lines": [
+        203,
+        222
+      ]
+    }
+  ]
+}

@@ -9,10 +9,10 @@ RSpec.describe GemBench::GemfileLineTokenizer do
     [
       all_lines,
       line,
-      index,
+      index
     ]
   }
-  let(:all_lines) { %w(hello darkness) }
+  let(:all_lines) { %w[hello darkness] }
   let(:line) { "hello" }
   let(:index) { 0 }
 
@@ -25,7 +25,7 @@ RSpec.describe GemBench::GemfileLineTokenizer do
       let(:all_lines) {
         [
           %(gem "snaky_hash"),
-          line,
+          line
         ]
       }
       let(:line) { %(gem "version_gem", "1.0.4") }
@@ -65,7 +65,7 @@ RSpec.describe GemBench::GemfileLineTokenizer do
         it "has version" do
           expect(instance.version).to eq({
             github: "oauth-xx/version_gem",
-            branch: "main",
+            branch: "main"
           })
         end
 
@@ -80,7 +80,7 @@ RSpec.describe GemBench::GemfileLineTokenizer do
             expect(instance.version).to eq({
               github: "oauth-xx/version_gem",
               branch: "main",
-              ref: "5086ef73754282e1e878539819e76915bce56103",
+              ref: "5086ef73754282e1e878539819e76915bce56103"
             })
           end
 
@@ -95,7 +95,7 @@ RSpec.describe GemBench::GemfileLineTokenizer do
               expect(instance.version).to eq({
                 github: "oauth-xx/version_gem",
                 branch: "main",
-                ref: "",
+                ref: ""
               })
             end
           end

@@ -8,7 +8,7 @@ RSpec.describe GemBench::Jersey do
       gem_name: gem_name,
       trades: trades,
       metadata: metadata,
-      verbose: verbose,
+      verbose: verbose
     }
   end
   let(:gem_name) { "method_source" }
@@ -83,7 +83,7 @@ RSpec.describe GemBench::Jersey do
       let(:trades) do
         {
           "Blue" => "Green",
-          old_namespace => donned_namespace,
+          old_namespace => donned_namespace
         }
       end
 
@@ -108,7 +108,7 @@ RSpec.describe GemBench::Jersey do
       let(:trades) do
         {
           "Blue" => "Green",
-          old_namespace => donned_namespace,
+          old_namespace => donned_namespace
         }
       end
 

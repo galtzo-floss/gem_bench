@@ -16,7 +16,7 @@ module GemBench
           tokenized_line.valid,
           tokenized_line.relevant_lines,
           tokenized_line.index,
-          (opts[:debug] == true) ? tokenized_line : nil,
+          (opts[:debug] == true) ? tokenized_line : nil
         )
       end
     end

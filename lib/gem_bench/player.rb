@@ -43,7 +43,7 @@ module GemBench
         "utf-8",
         invalid: :replace,
         undef: :replace,
-        replace: "_",
+        replace: "_"
       ) =~ line_match
     rescue ArgumentError => e
       if e.message =~ /invalid byte sequence/

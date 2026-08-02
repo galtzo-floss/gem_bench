@@ -11,14 +11,14 @@ RSpec.describe GemBench::StrictVersionGem do
       valid,
       relevant_lines,
       index,
-      tokenized_line,
+      tokenized_line
     ]
   }
   let(:name) { "oh_hi" }
   let(:version) { "5.7.4" }
   let(:version_type) { :constraint }
   let(:valid) { true }
-  let(:relevant_lines) { %w(hello darkness) }
+  let(:relevant_lines) { %w[hello darkness] }
   let(:index) { 1 }
   let(:tokenized_line) { "oh_hi" }
 
