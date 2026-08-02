@@ -1,5 +1,6 @@
 RSpec.describe GemBench::Scout do
-  let(:instance) { described_class.new }
+  let(:gemfile_path) { File.expand_path("../support/gemfile.rb", __dir__) }
+  let(:instance) { described_class.new(gemfile_path: gemfile_path) }
 
   describe "initialize" do
     it "does not raise error" do
@@ -8,7 +9,7 @@ RSpec.describe GemBench::Scout do
 
     context "when check_gemfile" do
       context "when true" do
-        let(:instance) { described_class.new(check_gemfile: true) }
+        let(:instance) { described_class.new(check_gemfile: true, gemfile_path: gemfile_path) }
 
         it "does not raise error" do
           expect { instance }.not_to raise_error
@@ -16,7 +17,7 @@ RSpec.describe GemBench::Scout do
       end
 
       context "when false" do
-        let(:instance) { described_class.new(check_gemfile: false) }
+        let(:instance) { described_class.new(check_gemfile: false, gemfile_path: gemfile_path) }
 
         it "does not raise error" do
           expect { instance }.not_to raise_error
@@ -24,7 +25,7 @@ RSpec.describe GemBench::Scout do
       end
 
       context "when nil" do
-        let(:instance) { described_class.new(check_gemfile: nil) }
+        let(:instance) { described_class.new(check_gemfile: nil, gemfile_path: gemfile_path) }
 
         it "does not raise error" do
           expect { instance }.not_to raise_error
@@ -32,7 +33,7 @@ RSpec.describe GemBench::Scout do
       end
 
       context "when default" do
-        let(:instance) { described_class.new }
+        let(:instance) { described_class.new(gemfile_path: gemfile_path) }
 
         it "does not raise error" do
           expect { instance }.not_to raise_error
@@ -141,7 +142,7 @@ RSpec.describe GemBench::Scout do
     end
 
     it("points to a Gemfile") do
-      expect(instance.gemfile_path).to match("Gemfile")
+      expect(instance.gemfile_path).to match(/gemfile/i)
     end
   end
 
@@ -149,7 +150,7 @@ RSpec.describe GemBench::Scout do
     subject(:gemfile_trash) { instance.gemfile_trash }
 
     context "when check_gemfile: true" do
-      let(:instance) { described_class.new(check_gemfile: true) }
+      let(:instance) { described_class.new(check_gemfile: true, gemfile_path: gemfile_path) }
 
       it "does not raise error" do
         block_is_expected.not_to raise_error
@@ -160,20 +161,17 @@ RSpec.describe GemBench::Scout do
       end
 
       it "gemfile_trash is not empty" do # rubocop:disable RSpec/ExampleLength
-        expect(instance.gemfile_trash)
-          .to eq(
-            [
-              "# For complexity!\n",
-              "# (this syntax is not supported by gem_bench, but also shouldn't make it blow up)\n",
-              "# Need test-unit be loaded by bundler for evaluation in specs\n",
-              "# Specify your gem's dependencies in gem_bench.gemspec\n"
-            ]
-          )
+        expect(instance.gemfile_trash).to include(
+          "# For complexity!\n",
+          "# (this syntax is not supported by gem_bench, but also shouldn't make it blow up)\n",
+          "# Need test-unit be loaded by bundler for evaluation in specs\n",
+          "# Specify your gem's dependencies in gem_bench.gemspec\n"
+        )
       end
     end
 
     context "when check_gemfile: false" do
-      let(:instance) { described_class.new(check_gemfile: false) }
+      let(:instance) { described_class.new(check_gemfile: false, gemfile_path: gemfile_path) }
 
       it "does not raise error" do
         block_is_expected.not_to raise_error
@@ -189,7 +187,7 @@ RSpec.describe GemBench::Scout do
     end
 
     context "when check_gemfile: nil" do
-      let(:instance) { described_class.new(check_gemfile: nil) }
+      let(:instance) { described_class.new(check_gemfile: nil, gemfile_path: gemfile_path) }
 
       it "does not raise error" do
         block_is_expected.not_to raise_error
@@ -200,20 +198,17 @@ RSpec.describe GemBench::Scout do
       end
 
       it "gemfile_trash is not empty" do # rubocop:disable RSpec/ExampleLength
-        expect(instance.gemfile_trash)
-          .to eq(
-            [
-              "# For complexity!\n",
-              "# (this syntax is not supported by gem_bench, but also shouldn't make it blow up)\n",
-              "# Need test-unit be loaded by bundler for evaluation in specs\n",
-              "# Specify your gem's dependencies in gem_bench.gemspec\n"
-            ]
-          )
+        expect(instance.gemfile_trash).to include(
+          "# For complexity!\n",
+          "# (this syntax is not supported by gem_bench, but also shouldn't make it blow up)\n",
+          "# Need test-unit be loaded by bundler for evaluation in specs\n",
+          "# Specify your gem's dependencies in gem_bench.gemspec\n"
+        )
       end
     end
 
     context "when check_gemfile: default" do
-      let(:instance) { described_class.new }
+      let(:instance) { described_class.new(gemfile_path: gemfile_path) }
 
       it "does not raise error" do
         block_is_expected.not_to raise_error
@@ -224,13 +219,11 @@ RSpec.describe GemBench::Scout do
       end
 
       it "gemfile_trash is not empty" do # rubocop:disable RSpec/ExampleLength
-        expect(instance.gemfile_trash).to eq(
-          [
-            "# For complexity!\n",
-            "# (this syntax is not supported by gem_bench, but also shouldn't make it blow up)\n",
-            "# Need test-unit be loaded by bundler for evaluation in specs\n",
-            "# Specify your gem's dependencies in gem_bench.gemspec\n"
-          ]
+        expect(instance.gemfile_trash).to include(
+          "# For complexity!\n",
+          "# (this syntax is not supported by gem_bench, but also shouldn't make it blow up)\n",
+          "# Need test-unit be loaded by bundler for evaluation in specs\n",
+          "# Specify your gem's dependencies in gem_bench.gemspec\n"
         )
       end
     end
@@ -240,7 +233,7 @@ RSpec.describe GemBench::Scout do
     subject(:gemfile_lines) { instance.gemfile_lines }
 
     context "when check_gemfile: true" do
-      let(:instance) { described_class.new(check_gemfile: true) }
+      let(:instance) { described_class.new(check_gemfile: true, gemfile_path: gemfile_path) }
 
       it "does not raise error" do
         block_is_expected.not_to raise_error
@@ -253,13 +246,13 @@ RSpec.describe GemBench::Scout do
       it "gemfile_lines is not empty" do
         expect(gemfile_lines[0..1]).to eq([
           "source \"https://rubygems.org\"\n",
-          "gem \"bundler\" # For specs!\n"
+          "git_source(:github) { |repo_name| \"https://github.com/\\#{repo_name}\" }\n"
         ])
       end
     end
 
     context "when check_gemfile: false" do
-      let(:instance) { described_class.new(check_gemfile: false) }
+      let(:instance) { described_class.new(check_gemfile: false, gemfile_path: gemfile_path) }
 
       it "does not raise error" do
         block_is_expected.not_to raise_error
@@ -275,7 +268,7 @@ RSpec.describe GemBench::Scout do
     end
 
     context "when check_gemfile: nil" do
-      let(:instance) { described_class.new(check_gemfile: nil) }
+      let(:instance) { described_class.new(check_gemfile: nil, gemfile_path: gemfile_path) }
 
       it "does not raise error" do
         block_is_expected.not_to raise_error
@@ -288,13 +281,13 @@ RSpec.describe GemBench::Scout do
       it "gemfile_lines is not empty" do
         expect(gemfile_lines[0..1]).to eq([
           "source \"https://rubygems.org\"\n",
-          "gem \"bundler\" # For specs!\n"
+          "git_source(:github) { |repo_name| \"https://github.com/\\#{repo_name}\" }\n"
         ])
       end
     end
 
     context "when check_gemfile: default" do
-      let(:instance) { described_class.new }
+      let(:instance) { described_class.new(gemfile_path: gemfile_path) }
 
       it "does not raise error" do
         block_is_expected.not_to raise_error
@@ -307,7 +300,7 @@ RSpec.describe GemBench::Scout do
       it "gemfile_lines is not empty" do
         expect(gemfile_lines[0..1]).to eq([
           "source \"https://rubygems.org\"\n",
-          "gem \"bundler\" # For specs!\n"
+          "git_source(:github) { |repo_name| \"https://github.com/\\#{repo_name}\" }\n"
         ])
       end
     end

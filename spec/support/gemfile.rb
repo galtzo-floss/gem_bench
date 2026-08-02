@@ -2,6 +2,11 @@ source "https://rubygems.org"
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
+# For complexity!
+# (this syntax is not supported by gem_bench, but also shouldn't make it blow up)
+# Need test-unit be loaded by bundler for evaluation in specs
+# Specify your gem's dependencies in gem_bench.gemspec
+
 # No constraint
 gem "anonymous_active_record"
 
