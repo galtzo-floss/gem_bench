@@ -1,4 +1,1 @@
-# <<kettle-jem:generated>> do not edit below this line
-gem "rubocop-lts", "~> 10.1" # ruby >= 3.2
-gem "standard", "~> 1.40" # ruby >= 3.0.0
 # <</kettle-jem:generated>>

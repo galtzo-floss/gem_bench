@@ -8,6 +8,24 @@
       ]
     }
   ],
+  "- gem: rubocop-lts\ndirect: gem_bench.gemspec": [
+    {
+      "file": ".structuredmerge/kettle-jem.yml",
+      "lines": [
+        94,
+        99
+      ]
+    }
+  ],
+  "- gem: standard\ndirect: gem_bench.gemspec": [
+    {
+      "file": ".structuredmerge/kettle-jem.yml",
+      "lines": [
+        109,
+        114
+      ]
+    }
+  ],
   ">> team = GemBench.check({verbose: true})\n[GemBench] Will search for gems in [\"/Users/pboling/.rvm/gems/ruby-1.9.3-head@foss/gems\", \"/Users/pboling/.rvm/gems/ruby-1.9.3-head@global/gems\", \"/Users/pboling/.rvm/gems/ruby-1.9.3-head@foss/bundler/gems\"]": [
     {
       "file": "README.md",
@@ -23,6 +41,65 @@
       "lines": [
         203,
         222
+      ]
+    }
+  ],
+  "action: remove_modular_gem\nreason: \"The gemspec owns the project's style dependency.\"": [
+    {
+      "file": ".structuredmerge/kettle-jem.yml",
+      "lines": [
+        97,
+        102,
+        107,
+        112,
+        117
+      ]
+    }
+  ],
+  "direct: gem_bench.gemspec\nmodular: gemfiles/modular/shunted.gemfile": [
+    {
+      "file": ".structuredmerge/kettle-jem.yml",
+      "lines": [
+        95,
+        110
+      ]
+    }
+  ],
+  "direct: gem_bench.gemspec\nmodular: gemfiles/modular/style.gemfile": [
+    {
+      "file": ".structuredmerge/kettle-jem.yml",
+      "lines": [
+        100,
+        105,
+        115
+      ]
+    }
+  ],
+  "modular: gemfiles/modular/shunted.gemfile\naction: remove_modular_gem": [
+    {
+      "file": ".structuredmerge/kettle-jem.yml",
+      "lines": [
+        96,
+        111
+      ]
+    }
+  ],
+  "modular: gemfiles/modular/style.gemfile\naction: remove_modular_gem": [
+    {
+      "file": ".structuredmerge/kettle-jem.yml",
+      "lines": [
+        101,
+        106,
+        116
+      ]
+    }
+  ],
+  "reason: \"The gemspec owns the project's style dependency.\"\n- gem: standard": [
+    {
+      "file": ".structuredmerge/kettle-jem.yml",
+      "lines": [
+        108,
+        113
       ]
     }
   ]
