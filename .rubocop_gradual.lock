@@ -2,7 +2,7 @@
   "lib/gem_bench/strict_version_requirement.rb:1358447646": [
     [46, 20, 3, "Style/MapJoin: Remove redundant `map(&:to_s)` before `join`.", 193414073]
   ],
-  "spec/gem_bench/strict_version_requirement_spec.rb:536099243": [
+  "spec/gem_bench/strict_version_requirement_spec.rb:1566306367": [
     [120, 16, 5, "RSpec/Output: Do not write to stdout in specs.", 187024980]
   ],
   "spec/gem_bench/team_spec.rb:1749134884": [
