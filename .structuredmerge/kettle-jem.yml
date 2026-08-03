@@ -94,33 +94,33 @@ dependency_conflicts:
     - gem: rubocop-lts
       direct: gem_bench.gemspec
       modular: gemfiles/modular/shunted.gemfile
-      action: review
-      reason: ""
+      action: remove_modular_gem
+      reason: "The gemspec owns the project's style dependency."
     - gem: rubocop-lts
       direct: gem_bench.gemspec
       modular: gemfiles/modular/style.gemfile
-      action: review
-      reason: ""
+      action: remove_modular_gem
+      reason: "The gemspec owns the project's style dependency."
     - gem: rubocop-packaging
       direct: gem_bench.gemspec
       modular: gemfiles/modular/style.gemfile
-      action: review
-      reason: ""
+      action: remove_modular_gem
+      reason: "The gemspec owns the project's style dependency."
     - gem: standard
       direct: gem_bench.gemspec
       modular: gemfiles/modular/shunted.gemfile
-      action: review
-      reason: ""
+      action: remove_modular_gem
+      reason: "The gemspec owns the project's style dependency."
     - gem: standard
       direct: gem_bench.gemspec
       modular: gemfiles/modular/style.gemfile
-      action: review
-      reason: ""
+      action: remove_modular_gem
+      reason: "The gemspec owns the project's style dependency."
     - gem: yard
       direct: gem_bench.gemspec
       modular: gemfiles/modular/documentation.gemfile
-      action: review
-      reason: ""
+      action: remove_modular_gem
+      reason: "The gemspec owns the project's documentation dependency."
 # This project's identifying emoji.
 # Used as the leading emoji in the README H1 heading and in the gemspec
 # summary and description. Every gem should have its own unique emoji.
