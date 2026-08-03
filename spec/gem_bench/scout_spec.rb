@@ -246,7 +246,7 @@ RSpec.describe GemBench::Scout do
       it "gemfile_lines is not empty" do
         expect(gemfile_lines[0..1]).to eq([
           "source \"https://rubygems.org\"\n",
-          "git_source(:github) { |repo_name| \"https://github.com/\\#{repo_name}\" }\n"
+          "git_source(:github) { |repo_name| \"https://github.com/\#{repo_name}\" }\n"
         ])
       end
     end
@@ -281,7 +281,7 @@ RSpec.describe GemBench::Scout do
       it "gemfile_lines is not empty" do
         expect(gemfile_lines[0..1]).to eq([
           "source \"https://rubygems.org\"\n",
-          "git_source(:github) { |repo_name| \"https://github.com/\\#{repo_name}\" }\n"
+          "git_source(:github) { |repo_name| \"https://github.com/\#{repo_name}\" }\n"
         ])
       end
     end
@@ -300,7 +300,7 @@ RSpec.describe GemBench::Scout do
       it "gemfile_lines is not empty" do
         expect(gemfile_lines[0..1]).to eq([
           "source \"https://rubygems.org\"\n",
-          "git_source(:github) { |repo_name| \"https://github.com/\\#{repo_name}\" }\n"
+          "git_source(:github) { |repo_name| \"https://github.com/\#{repo_name}\" }\n"
         ])
       end
     end

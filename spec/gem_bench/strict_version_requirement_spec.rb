@@ -97,7 +97,7 @@ RSpec.describe GemBench::StrictVersionRequirement do
     context "when gemfile_path" do
       let(:options) { {gemfile_path: File.join(File.dirname(__FILE__), "..", "support", "gemfile.rb")} }
 
-      let(:index) { 5 }
+      let(:index) { 10 }
 
       it "succeeds" do
         block_is_expected.to not_raise_error
