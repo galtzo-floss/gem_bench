@@ -119,6 +119,11 @@ gem install gem_bench
 
 ## ⚙️ Configuration
 
+GemBench reads the active Bundler/RubyGems installation by default. Pass a
+Gemfile path or finder options to `GemBench.find`, `GemBench.check`, or the
+corresponding command-line entry point when the target project is not the
+current bundle. There is no global configuration file.
+
 ## 🔧 Basic Usage
 
 Works with Ruby >= 2.3.
