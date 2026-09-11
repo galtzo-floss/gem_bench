@@ -17,10 +17,10 @@ platform :mri do
   gem "rubocop-minitest", "~> 0.40", ">= 0.40.0"
   gem "rubocop-on-rbs", "~> 2.0", ">= 2.0.0"        # ruby >= 3.2.0
 
-  if ENV.fetch("RUBOCOP_LTS_LOCAL", "false").casecmp("false").zero?
+  if ENV.fetch("RUBOCOP_LTS_DEV", "false").casecmp("false").zero?
     declared_gems = instance_variable_get(:@dependencies).to_a.map(&:name)
-    gem "rubocop-lts-rspec", "~> 1.0", ">= 1.0.5" unless declared_gems.include?("rubocop-lts-rspec")
-    gem "rubocop-ruby2_3", "~> 3.0", ">= 3.0.5" unless declared_gems.include?("rubocop-ruby2_3")
+    gem "rubocop-lts-rspec", "~> 1.0", ">= 1.0.6" unless declared_gems.include?("rubocop-lts-rspec")
+    gem "rubocop-ruby2_3", "~> 3.0", ">= 3.0.7" unless declared_gems.include?("rubocop-ruby2_3")
   else
     eval_gemfile("style_local.gemfile")
   end
