@@ -792,6 +792,7 @@ Thanks for RTFM. ☺️
 [💎appraisal2]: https://github.com/appraisal-rb/appraisal2
 [💎appraisal2-img]: https://img.shields.io/badge/appraised_by-appraisal2-34495e.svg?plastic&logo=ruby&logoColor=white
 [💎d-in-dvcs]: https://railsbling.com/posts/dvcs/put_the_d_in_dvcs/
+[bundle-group-pattern]: https://gist.github.com/pboling/4564780
 
 <!-- kettle-jem:metadata:start -->
 | Field | Value |
