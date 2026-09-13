@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: GemBench::Team
+  
+    &mdash; Documentation by YARD 0.9.45
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css">
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css">
+
+<script type="text/javascript">
+  pathId = "GemBench::Team";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (T)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../GemBench.html" title="GemBench (module)">GemBench</a></span></span>
+     &raquo; 
+    <span class="title">Team</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: GemBench::Team
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">GemBench::Team</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  <dl>
+      <dt>Extended by:</dt>
+      <dd>Forwardable</dd>
+  </dl>
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/gem_bench/team.rb
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>It doesn’t make sense to use Team unless the Gemfile you want to evaluate is currently loaded.<br />
+For example:</p>
+<ul>
+  <li>if you are in a rails console, and want to evaluate the Gemfile of the Rails app, that’s great!</li>
+  <li>if you are in a context with no Gemfile loaded, or a different Gemfile loaded than the one you want to evaluate,<br />
+this class may not give sensible results. This is because it checks loaded gems via RubyGems and Bundler.</li>
+</ul>
+
+<p>Terminology:</p>
+
+<p>starter: a gem that needs to be loaded when bundler normally loads gems</p>
+
+<p>bencher: a gem that can, or should, have require: false to delay loading until after bootstrap</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="EXCLUDE-constant" class="">EXCLUDE =
+          
+        </dt>
+        <dd><pre class="code"><span class='qwords_beg'>%w[</span><span class='words_sep'>
+</span><span class='words_sep'>  </span><span class='tstring_content'>bundler</span><span class='words_sep'>
+</span><span class='words_sep'>  </span><span class='tstring_content'>gem_bench</span><span class='words_sep'>
+</span><span class='words_sep'>  </span><span class='tstring_content'>i18n-airbrake</span><span class='words_sep'>
+</span><span class='words_sep'>  </span><span class='tstring_content'>devise-async</span><span class='words_sep'>
+</span><span class='words_sep'>  </span><span class='tstring_content'>km</span><span class='words_sep'>
+</span><span class='words_sep'>  </span><span class='tstring_content'>vestal_versions</span><span class='words_sep'>
+</span><span class='words_sep'>  </span><span class='tstring_content'>omniauth-facebook</span><span class='words_sep'>
+</span><span class='words_sep'>  </span><span class='tstring_content'>flag_shih_tzu</span><span class='words_sep'>
+</span><span class='words_sep'>  </span><span class='tstring_content'>pry-remote</span><span class='words_sep'>
+</span><span class='words_sep'>  </span><span class='tstring_content'>koala</span><span class='words_sep'>
+</span><span class='words_sep'>  </span><span class='tstring_content'>simple_form</span><span class='words_sep'>
+</span><span class='words_sep'>  </span><span class='tstring_content'>thumbs_up</span><span class='words_sep'>
+</span><span class='words_sep'>  </span><span class='tstring_content'>memoist</span><span class='words_sep'>
+</span><span class='words_sep'>  </span><span class='tstring_content'>cancan</span><span class='words_sep'>
+</span><span class='words_sep'>  </span><span class='tstring_content'>friendly_id</span><span class='words_sep'>
+</span><span class='words_sep'>  </span><span class='tstring_content'>faker</span><span class='words_sep'>
+</span><span class='words_sep'>  </span><span class='tstring_content'>capistrano3-puma</span><span class='words_sep'>
+</span><span class='words_sep'>  </span><span class='tstring_content'>wkhtmltopdf-binary</span><span class='words_sep'>
+</span><span class='tstring_end'>]</span></span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#all-instance_method" title="#all (instance method)">#<strong>all</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute all.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bad_ideas-instance_method" title="#bad_ideas (instance method)">#<strong>bad_ideas</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute bad_ideas.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#benchers-instance_method" title="#benchers (instance method)">#<strong>benchers</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute benchers.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#current_gemfile_suggestions-instance_method" title="#current_gemfile_suggestions (instance method)">#<strong>current_gemfile_suggestions</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute current_gemfile_suggestions.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#excluded-instance_method" title="#excluded (instance method)">#<strong>excluded</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute excluded.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gemfile_lines-instance_method" title="#gemfile_lines (instance method)">#<strong>gemfile_lines</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute gemfile_lines.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#look_for_regex-instance_method" title="#look_for_regex (instance method)">#<strong>look_for_regex</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute look_for_regex.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scout-instance_method" title="#scout (instance method)">#<strong>scout</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute scout.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#starters-instance_method" title="#starters (instance method)">#<strong>starters</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute starters.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#trash_lines-instance_method" title="#trash_lines (instance method)">#<strong>trash_lines</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute trash_lines.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#verbose-instance_method" title="#verbose (instance method)">#<strong>verbose</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute verbose.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_to_roster-instance_method" title="#add_to_roster (instance method)">#<strong>add_to_roster</strong>(player)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#check-instance_method" title="#check (instance method)">#<strong>check</strong>(player)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#check_all-instance_method" title="#check_all (instance method)">#<strong>check_all</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#compare_gemfile-instance_method" title="#compare_gemfile (instance method)">#<strong>compare_gemfile</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(**options)  &#x21d2; Team </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>A new instance of Team.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#list_starters-instance_method" title="#list_starters (instance method)">#<strong>list_starters</strong>(format: :name)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#nothing-instance_method" title="#nothing (instance method)">#<strong>nothing</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#prepare_bad_ideas-instance_method" title="#prepare_bad_ideas (instance method)">#<strong>prepare_bad_ideas</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#print-instance_method" title="#print (instance method)">#<strong>print</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Void.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#strike_out-instance_method" title="#strike_out (instance method)">#<strong>strike_out</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+    
+  
+
+
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(**options)  &#x21d2; <tt><span class='object_link'><a href="" title="GemBench::Team (class)">Team</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns a new instance of Team.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 52</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='op'>**</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='ivar'>@look_for_regex</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:look_for_regex</span><span class='rbracket'>]</span>
+  <span class='comment'># find: Find gems containing specific strings in code
+</span>  <span class='comment'># bench: Find gems that can probably be benched (require: false) in the Gemfile
+</span>  <span class='ivar'>@check_type</span> <span class='op'>=</span> <span class='ivar'>@look_for_regex</span> <span class='op'>?</span> <span class='symbol'>:find</span> <span class='op'>:</span> <span class='symbol'>:bench</span>
+  <span class='ivar'>@benching</span> <span class='op'>=</span> <span class='ivar'>@check_type</span> <span class='op'>==</span> <span class='symbol'>:bench</span>
+  <span class='ivar'>@scout</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../GemBench.html" title="GemBench (module)">GemBench</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Scout.html" title="GemBench::Scout (class)">Scout</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Scout.html#initialize-instance_method" title="GemBench::Scout#initialize (method)">new</a></span></span><span class='lparen'>(</span>
+    <span class='label'>check_gemfile:</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='symbol'>:check_gemfile</span><span class='comma'>,</span> <span class='id identifier rubyid_benching?'>benching?</span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='label'>gemfile_path:</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='symbol'>:gemfile_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='const'>Dir</span><span class='period'>.</span><span class='id identifier rubyid_pwd'>pwd</span><span class='embexpr_end'>}</span><span class='tstring_content'>/Gemfile</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='rparen'>)</span>
+  <span class='ivar'>@exclude_file_pattern_regex_proc</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:exclude_file_pattern_regex_proc</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:call</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:exclude_file_pattern_regex_proc</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='const'><span class='object_link'><a href="../GemBench.html" title="GemBench (module)">GemBench</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../GemBench.html#EXCLUDE_FILE_PATTERN_REGEX_PROC-constant" title="GemBench::EXCLUDE_FILE_PATTERN_REGEX_PROC (constant)">EXCLUDE_FILE_PATTERN_REGEX_PROC</a></span></span>
+  <span class='comment'># Among the loaded gems there may be some that did not need to be.
+</span>  <span class='id identifier rubyid_exclude!'>exclude!</span>
+  <span class='id identifier rubyid_exclusions'>exclusions</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> + </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_excluded'>excluded</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> loaded gems which GemBench is configured to ignore.\n</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_excluded'>excluded</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span>
+  <span class='ivar'>@starters</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='ivar'>@benchers</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='ivar'>@current_gemfile_suggestions</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='ivar'>@verbose</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:verbose</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_check_all'>check_all</span>
+  <span class='ivar'>@bad_ideas</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='id identifier rubyid_benching?'>benching?</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:bad_ideas</span><span class='rbracket'>]</span>
+      <span class='kw'>true</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_check_gemfile?'>check_gemfile?</span> <span class='op'>?</span> <span class='kw'>false</span> <span class='op'>:</span> <span class='op'>!</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:bad_ideas</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='kw'>false</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>else</span>
+    <span class='kw'>false</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[GemBench] Will search for gems in </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_gem_paths'>gem_paths</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='embexpr_beg'>#{</span><span class='kw'>if</span> <span class='id identifier rubyid_benching?'>benching?</span>
+                                                                     <span class='id identifier rubyid_check_gemfile?'>check_gemfile?</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[GemBench] Will check Gemfile at </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_gemfile_path'>gemfile_path</span><span class='embexpr_end'>}</span><span class='tstring_content'>.\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[GemBench] No Gemfile found.\n</span><span class='tstring_end'>&quot;</span></span>
+                                                                   <span class='kw'>end</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[GemBench] Will show bad ideas.  Be Careful.\n</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_bad_ideas'>bad_ideas</span><span class='embexpr_end'>}</span><span class='tstring_content'>[GemBench] Detected </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_all'>all</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> loaded gems</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_exclusions'>exclusions</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_compare_gemfile'>compare_gemfile</span> <span class='kw'>if</span> <span class='id identifier rubyid_benching?'>benching?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_check_gemfile?'>check_gemfile?</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_print'>print</span> <span class='kw'>if</span> <span class='id identifier rubyid_verbose'>verbose</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="all=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="all-instance_method">
+  
+    #<strong>all</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute all.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_all'>all</span>
+  <span class='ivar'>@all</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="bad_ideas=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="bad_ideas-instance_method">
+  
+    #<strong>bad_ideas</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute bad_ideas.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_bad_ideas'>bad_ideas</span>
+  <span class='ivar'>@bad_ideas</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="benchers=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="benchers-instance_method">
+  
+    #<strong>benchers</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute benchers.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_benchers'>benchers</span>
+  <span class='ivar'>@benchers</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="current_gemfile_suggestions=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="current_gemfile_suggestions-instance_method">
+  
+    #<strong>current_gemfile_suggestions</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute current_gemfile_suggestions.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_current_gemfile_suggestions'>current_gemfile_suggestions</span>
+  <span class='ivar'>@current_gemfile_suggestions</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="excluded=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="excluded-instance_method">
+  
+    #<strong>excluded</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute excluded.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_excluded'>excluded</span>
+  <span class='ivar'>@excluded</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="gemfile_lines=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="gemfile_lines-instance_method">
+  
+    #<strong>gemfile_lines</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute gemfile_lines.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_gemfile_lines'>gemfile_lines</span>
+  <span class='ivar'>@gemfile_lines</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="look_for_regex-instance_method">
+  
+    #<strong>look_for_regex</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute look_for_regex.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+41
+42
+43</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 41</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_look_for_regex'>look_for_regex</span>
+  <span class='ivar'>@look_for_regex</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="scout-instance_method">
+  
+    #<strong>scout</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute scout.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+41
+42
+43</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 41</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_scout'>scout</span>
+  <span class='ivar'>@scout</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="starters=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="starters-instance_method">
+  
+    #<strong>starters</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute starters.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_starters'>starters</span>
+  <span class='ivar'>@starters</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="trash_lines=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="trash_lines-instance_method">
+  
+    #<strong>trash_lines</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute trash_lines.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_trash_lines'>trash_lines</span>
+  <span class='ivar'>@trash_lines</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="verbose=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="verbose-instance_method">
+  
+    #<strong>verbose</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute verbose.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_verbose'>verbose</span>
+  <span class='ivar'>@verbose</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add_to_roster-instance_method">
+  
+    #<strong>add_to_roster</strong>(player)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+220
+221
+222
+223
+224
+225
+226</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 220</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_to_roster'>add_to_roster</span><span class='lparen'>(</span><span class='id identifier rubyid_player'>player</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_player'>player</span><span class='period'>.</span><span class='id identifier rubyid_starter?'>starter?</span>
+    <span class='id identifier rubyid_starters'>starters</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_player'>player</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_benchers'>benchers</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_player'>player</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="check-instance_method">
+  
+    #<strong>check</strong>(player)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 208</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_check'>check</span><span class='lparen'>(</span><span class='id identifier rubyid_player'>player</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_gem_paths'>gem_paths</span><span class='period'>.</span><span class='id identifier rubyid_detect'>detect</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_path'>path</span><span class='op'>|</span>
+    <span class='id identifier rubyid_glob_path'>glob_path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_path'>path</span><span class='embexpr_end'>}</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_player'>player</span><span class='period'>.</span><span class='id identifier rubyid_file_path_glob'>file_path_glob</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_file_paths'>file_paths</span> <span class='op'>=</span> <span class='const'>Dir</span><span class='period'>.</span><span class='id identifier rubyid_glob'>glob</span><span class='lparen'>(</span><span class='id identifier rubyid_glob_path'>glob_path</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[GemBench] checking </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_player'>player</span><span class='embexpr_end'>}</span><span class='tstring_content'> at </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_glob_path'>glob_path</span><span class='embexpr_end'>}</span><span class='tstring_content'> (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_file_paths'>file_paths</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> files)</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_extra_verbose?'>extra_verbose?</span>
+    <span class='id identifier rubyid_file_paths'>file_paths</span><span class='period'>.</span><span class='id identifier rubyid_detect'>detect</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_file_path'>file_path</span><span class='op'>|</span>
+      <span class='id identifier rubyid_player'>player</span><span class='period'>.</span><span class='id identifier rubyid_set_starter'>set_starter</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='label'>line_match:</span> <span class='id identifier rubyid_look_for_regex'>look_for_regex</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_player'>player</span><span class='period'>.</span><span class='id identifier rubyid_starter?'>starter?</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="check_all-instance_method">
+  
+    #<strong>check_all</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 195</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_check_all'>check_all</span>
+  <span class='id identifier rubyid_all'>all</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_player_data'>player_data</span><span class='op'>|</span>
+    <span class='id identifier rubyid_exclude_file_pattern'>exclude_file_pattern</span> <span class='op'>=</span> <span class='ivar'>@exclude_file_pattern_regex_proc</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_player_data'>player_data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_player'>player</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../GemBench.html" title="GemBench (module)">GemBench</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Player.html" title="GemBench::Player (class)">Player</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Player.html#initialize-instance_method" title="GemBench::Player#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbrace'>{</span>
+      <span class='label'>name:</span> <span class='id identifier rubyid_player_data'>player_data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='label'>version:</span> <span class='id identifier rubyid_player_data'>player_data</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='label'>exclude_file_pattern:</span> <span class='id identifier rubyid_exclude_file_pattern'>exclude_file_pattern</span>
+    <span class='rbrace'>}</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_check'>check</span><span class='lparen'>(</span><span class='id identifier rubyid_player'>player</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_add_to_roster'>add_to_roster</span><span class='lparen'>(</span><span class='id identifier rubyid_player'>player</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="compare_gemfile-instance_method">
+  
+    #<strong>compare_gemfile</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 178</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_compare_gemfile'>compare_gemfile</span>
+  <span class='id identifier rubyid_benchers'>benchers</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_player'>player</span><span class='op'>|</span>
+    <span class='id identifier rubyid_scout'>scout</span><span class='period'>.</span><span class='id identifier rubyid_gemfile_lines'>gemfile_lines</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_line'>line</span><span class='op'>|</span>
+      <span class='id identifier rubyid_found'>found</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_line'>line</span> <span class='op'>=~</span> <span class='id identifier rubyid_player'>player</span><span class='period'>.</span><span class='id identifier rubyid_gemfile_regex'>gemfile_regex</span><span class='rparen'>)</span>
+      <span class='kw'>next</span> <span class='kw'>unless</span> <span class='id identifier rubyid_found'>found</span>
+
+      <span class='comment'># remove the found line from the array, because no sane person has more than one gem dependency per line... right?
+</span>      <span class='id identifier rubyid_line'>line</span> <span class='op'>=</span> <span class='id identifier rubyid_scout'>scout</span><span class='period'>.</span><span class='id identifier rubyid_gemfile_lines'>gemfile_lines</span><span class='period'>.</span><span class='id identifier rubyid_delete_at'>delete_at</span><span class='lparen'>(</span><span class='id identifier rubyid_scout'>scout</span><span class='period'>.</span><span class='id identifier rubyid_gemfile_lines'>gemfile_lines</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='id identifier rubyid_line'>line</span><span class='rparen'>)</span><span class='rparen'>)</span>
+      <span class='comment'># does the line already have require: false?
+</span>      <span class='kw'>unless</span> <span class='id identifier rubyid_line'>line</span> <span class='op'>=~</span> <span class='const'><span class='object_link'><a href="../GemBench.html" title="GemBench (module)">GemBench</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../GemBench.html#REQUIRE_FALSE_REGEX-constant" title="GemBench::REQUIRE_FALSE_REGEX (constant)">REQUIRE_FALSE_REGEX</a></span></span>
+        <span class='id identifier rubyid_current_gemfile_suggestions'>current_gemfile_suggestions</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_benchers'>benchers</span><span class='period'>.</span><span class='id identifier rubyid_delete_at'>delete_at</span><span class='lparen'>(</span><span class='id identifier rubyid_benchers'>benchers</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='id identifier rubyid_player'>player</span><span class='rparen'>)</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+      <span class='kw'>break</span> <span class='comment'># outside of the inner loop
+</span>    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="list_starters-instance_method">
+  
+    #<strong>list_starters</strong>(format: :name)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+87
+88
+89</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 87</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_list_starters'>list_starters</span><span class='lparen'>(</span><span class='label'>format:</span> <span class='symbol'>:name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_starters'>starters</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_starter'>starter</span><span class='op'>|</span> <span class='id identifier rubyid_starter'>starter</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='id identifier rubyid_format'>format</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="nothing-instance_method">
+  
+    #<strong>nothing</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+160
+161
+162</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 160</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_nothing'>nothing</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[GemBench] No gems were evaluated by GemBench.\n</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="../GemBench.html" title="GemBench (module)">GemBench</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../GemBench.html#USAGE-constant" title="GemBench::USAGE (constant)">USAGE</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="prepare_bad_ideas-instance_method">
+  
+    #<strong>prepare_bad_ideas</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 164</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_prepare_bad_ideas'>prepare_bad_ideas</span>
+  <span class='id identifier rubyid_string'>string</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_benchers'>benchers</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span>
+    <span class='id identifier rubyid_gemfile_instruction'>gemfile_instruction</span> <span class='op'>=</span> <span class='id identifier rubyid_check_gemfile?'>check_gemfile?</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>To safely evaluate a Gemfile:\n\t1. Make sure you are in the root of a project with a Gemfile\n\t2. Make sure the gem is actually a dependency in the Gemfile\n</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_string'>string</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[GemBench] Evaluated </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_all'>all</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> loaded gems and found </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_benchers'>benchers</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> which may be able to skip boot loading (require: false).\n*** =&gt; WARNING &lt;= ***: Be careful adding non-primary dependencies to your Gemfile as it is generally a bad idea.\n</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_gemfile_instruction'>gemfile_instruction</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_benchers'>benchers</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_player'>player</span><span class='comma'>,</span> <span class='id identifier rubyid_index'>index</span><span class='op'>|</span>
+      <span class='id identifier rubyid_string'>string</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_player'>player</span><span class='period'>.</span><span class='id identifier rubyid_careful'>careful</span><span class='lparen'>(</span><span class='id identifier rubyid_index'>index</span> <span class='op'>+</span> <span class='int'>1</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_string'>string</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_strike_out'>strike_out</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_string'>string</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="print-instance_method">
+  
+    #<strong>print</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns void.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'><p>void</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 92</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_print'>print</span>
+  <span class='id identifier rubyid_string'>string</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_all'>all</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='id identifier rubyid_string'>string</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_nothing'>nothing</span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_starters'>starters</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='id identifier rubyid_string'>string</span> <span class='op'>&lt;&lt;</span> <span class='kw'>if</span> <span class='id identifier rubyid_benching?'>benching?</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[GemBench] Found no gems that need to load at boot time.\n</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>else</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[GemBench] Found no gems containing </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_look_for_regex'>look_for_regex</span><span class='embexpr_end'>}</span><span class='tstring_content'> in Ruby code.\n</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_string'>string</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="../GemBench.html" title="GemBench (module)">GemBench</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../GemBench.html#USAGE-constant" title="GemBench::USAGE (constant)">USAGE</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_check_gemfile?'>check_gemfile?</span>
+    <span class='id identifier rubyid_string'>string</span> <span class='op'>&lt;&lt;</span> <span class='kw'>if</span> <span class='id identifier rubyid_benching?'>benching?</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[GemBench] We found a Rails::Railtie or Rails::Engine in the following files. However, it is possible that there are false positives, so you may want to verify that this is the case.\n\n</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>else</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[GemBench] We found </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_look_for_regex'>look_for_regex</span><span class='embexpr_end'>}</span><span class='tstring_content'> in the following files.\n\n</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_starters'>starters</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_starter'>starter</span><span class='op'>|</span>
+      <span class='id identifier rubyid_string'>string</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\t</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_starter'>starter</span><span class='embexpr_end'>}</span><span class='tstring_content'>:\n</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_starter'>starter</span><span class='period'>.</span><span class='id identifier rubyid_stats'>stats</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_stat'>stat</span><span class='op'>|</span>
+        <span class='id identifier rubyid_string'>string</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\t\t</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_stat'>stat</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_stat'>stat</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_benching?'>benching?</span>
+      <span class='id identifier rubyid_string'>string</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[GemBench] If you want to check for false positives, the files to check for Railties and Engines are listed above.\n</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_string'>string</span> <span class='op'>&lt;&lt;</span> <span class='kw'>if</span> <span class='id identifier rubyid_benching?'>benching?</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[GemBench] </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_starters'>starters</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> out of </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_all'>all</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> evaluated gems actually need to be loaded at boot time. They are:\n</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>else</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[GemBench] </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_starters'>starters</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> out of </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_all'>all</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> evaluated gems contain </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_look_for_regex'>look_for_regex</span><span class='embexpr_end'>}</span><span class='tstring_content'>. They are:\n</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_starters'>starters</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_starter'>starter</span><span class='comma'>,</span> <span class='id identifier rubyid_index'>index</span><span class='op'>|</span>
+      <span class='id identifier rubyid_string'>string</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_starter'>starter</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span><span class='lparen'>(</span><span class='id identifier rubyid_index'>index</span> <span class='op'>+</span> <span class='int'>1</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_extra_verbose?'>extra_verbose?</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_benching?'>benching?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_benchers'>benchers</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span>
+      <span class='id identifier rubyid_string'>string</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[GemBench] </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_benchers'>benchers</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> out of </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_all'>all</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> evaluated gems did not contain </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_look_for_regex'>look_for_regex</span><span class='embexpr_end'>}</span><span class='tstring_content'>. They are:\n</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_benchers'>benchers</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_bencher'>bencher</span><span class='comma'>,</span> <span class='id identifier rubyid_index'>index</span><span class='op'>|</span>
+        <span class='id identifier rubyid_string'>string</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_bencher'>bencher</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span><span class='lparen'>(</span><span class='id identifier rubyid_index'>index</span> <span class='op'>+</span> <span class='int'>1</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_check_gemfile?'>check_gemfile?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_benching?'>benching?</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_current_gemfile_suggestions'>current_gemfile_suggestions</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span>
+      <span class='id identifier rubyid_string'>string</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[GemBench] Evaluated </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_all'>all</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> gems and Gemfile at </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_gemfile_path'>gemfile_path</span><span class='embexpr_end'>}</span><span class='tstring_content'>.\n[GemBench] Here are </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_current_gemfile_suggestions'>current_gemfile_suggestions</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> suggestions for improvement:\n</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_current_gemfile_suggestions'>current_gemfile_suggestions</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_player'>player</span><span class='comma'>,</span> <span class='id identifier rubyid_index'>index</span><span class='op'>|</span>
+        <span class='id identifier rubyid_string'>string</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_player'>player</span><span class='period'>.</span><span class='id identifier rubyid_suggest'>suggest</span><span class='lparen'>(</span><span class='id identifier rubyid_index'>index</span> <span class='op'>+</span> <span class='int'>1</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>end</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_string'>string</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_strike_out'>strike_out</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_benching?'>benching?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_bad_ideas'>bad_ideas</span>
+    <span class='comment'># Only bad ideas if you are evaluating an actual Gemfile. If just evaluating loaded gems, then info is fine.
+</span>    <span class='id identifier rubyid_string'>string</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_prepare_bad_ideas'>prepare_bad_ideas</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_string'>string</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="strike_out-instance_method">
+  
+    #<strong>strike_out</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+152
+153
+154
+155
+156
+157
+158</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gem_bench/team.rb', line 152</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_strike_out'>strike_out</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_check_gemfile?'>check_gemfile?</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[GemBench] Evaluated </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_all'>all</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> gems against your Gemfile but found no primary dependencies which can safely skip require on boot (require: false).\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>else</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[GemBench] Evaluated </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_all'>all</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> gems but found none which can safely skip require on boot (require: false).\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Sun Sep 13 14:15:28 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.45 (ruby-4.0.6).
+</div>
+
+    </div>
+  </body>
+</html>

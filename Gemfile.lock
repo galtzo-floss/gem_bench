@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/pboling/rubocop-packaging.git
+  revision: 3539ba858d379740d638566faee9e56b2b854145
+  ref: 3539ba858d379740d638566faee9e56b2b854145
+  specs:
+    rubocop-packaging (0.6.0)
+      lint_roller (~> 1.1.0)
+      rubocop (>= 1.72.1, < 2.0)
+
 PATH
   remote: .
   specs:
@@ -280,6 +289,7 @@ GEM
       ast-merge (= 7.1.9)
       tree_haver (= 7.1.9)
       version_gem (~> 1.1, >= 1.1.15)
+    power_assert (3.1.0)
     pp (0.6.4)
       prettyprint
     prettyprint (0.2.0)
@@ -409,9 +419,6 @@ GEM
       rbs (~> 4.0)
       rubocop (>= 1.72.1, < 2.0)
       zlib
-    rubocop-packaging (0.6.0)
-      lint_roller (~> 1.1.0)
-      rubocop (>= 1.72.1, < 2.0)
     rubocop-performance (1.26.1)
       lint_roller (~> 1.1)
       rubocop (>= 1.75.0, < 2.0)
@@ -497,6 +504,8 @@ GEM
     strscan (3.1.8)
     terminal-table (4.0.0)
       unicode-display_width (>= 1.1.1, < 4)
+    test-unit (3.7.8)
+      power_assert
     thor (1.5.0)
     timecop (0.9.11)
     timecop-rspec (1.0.3)
@@ -612,23 +621,21 @@ DEPENDENCIES
   rbs (>= 3.0)
   reek (~> 6.5, >= 6.5.0)
   require_bench (~> 1.0, >= 1.0.4)
-  rspec (~> 3.13)
-  rspec-block_is_expected (~> 1.0, >= 1.0.6)
   rubocop-gradual (~> 0.4, >= 0.4.0)
-  rubocop-lts (~> 10.1)
+  rubocop-lts (~> 10.3, >= 10.3.3)
   rubocop-lts-rspec (~> 1.0, >= 1.0.6)
   rubocop-minitest (~> 0.40, >= 0.40.0)
   rubocop-on-rbs (~> 2.0, >= 2.0.0)
-  rubocop-packaging (~> 0.5, >= 0.5.2)
+  rubocop-packaging!
   rubocop-ruby2_3 (~> 3.0, >= 3.0.7)
   ruby-progressbar (~> 1.13)
-  standard (~> 1.40)
+  standard (~> 1.56, >= 1.56.0)
   stone_checksums (~> 1.0, >= 1.0.9)
   stringio (>= 3.0)
+  test-unit (~> 3.6)
   turbo_tests2 (~> 3.2, >= 3.2.8)
   webrick (~> 1.9)
   yaml-converter (~> 0.2, >= 0.2.5)
-  yard (~> 0.9, >= 0.9.34)
   yard-fence (~> 0.9, >= 0.9.8)
   yard-junk (~> 0.1, >= 0.1.0)
   yard-lint (~> 1.11, >= 1.11.0)
@@ -732,6 +739,7 @@ CHECKSUMS
   parser (3.3.12.0) sha256=21a6d7f755d5a24dfbdc6e6b772e4e879a52e7631a88bc5a3a134606052c9828
   parslet (2.0.0) sha256=d45130695d39b43d7e6a91f4d2ec66b388a8d822bae38de9b4de9a5fbde1f606
   plain-merge (7.1.9) sha256=0ce835a4377abc085aa7fe2f4ad058d8c3fd36aec845f9e4b0481fb485593b91
+  power_assert (3.1.0) sha256=fefe98ed5d3140628138f3f9f9194d6ece01f1320e69700d3c928adca7518251
   pp (0.6.4) sha256=dfcb0fce700c41456265922884f9fe195d7fbb0674a3578e6c0f69588e82b570
   prettyprint (0.2.0) sha256=2bc9e15581a94742064a3cc8b0fb9d45aae3d03a1baa6ef80922627a0766f193
   prism (1.9.0) sha256=7b530c6a9f92c24300014919c9dcbc055bf4cdf51ec30aed099b06cd6674ef85
@@ -773,7 +781,7 @@ CHECKSUMS
   rubocop-md (2.0.4) sha256=0d076b6b5e99dea2ddc928c4bd702497decb9a8400da7808091e02ebcafcfb93
   rubocop-minitest (0.40.0) sha256=353c698199115f12151144cf0b5a96f69bb9d77b660cf6536df2c4250c672a9d
   rubocop-on-rbs (2.0.0) sha256=ce74d1b3d5daead19f4b611623656c185821dfc9aed9c7079bb1e5d7d7c464be
-  rubocop-packaging (0.6.0) sha256=fb92bd0fb48e6f8cdb1648d2249b0cd51c2497dcc87340132d22f01edbf558a7
+  rubocop-packaging (0.6.0)
   rubocop-performance (1.26.1) sha256=cd19b936ff196df85829d264b522fd4f98b6c89ad271fa52744a8c11b8f71834
   rubocop-rake (0.7.1) sha256=3797f2b6810c3e9df7376c26d5f44f3475eda59eb1adc38e6f62ecf027cbae4d
   rubocop-rspec (3.10.2) sha256=0b3e2ecc592cd10ecbf0095bb58d1e357905276e069643523cc19eb7495f65e2
@@ -803,6 +811,7 @@ CHECKSUMS
   strings-ansi (0.2.0) sha256=90262d760ea4a94cc2ae8d58205277a343409c288cbe7c29416b1826bd511c88
   strscan (3.1.8) sha256=aae2db611a225559f21ffbb71765c9a4e60fd262534a9ea84f4f11c7f32f679e
   terminal-table (4.0.0) sha256=f504793203f8251b2ea7c7068333053f0beeea26093ec9962e62ea79f94301d2
+  test-unit (3.7.8) sha256=689d1ca53f4d46f678b4e5d68d8e4294f87fc5e8b9238cc4de7c5727e8d65943
   thor (1.5.0) sha256=e3a9e55fe857e44859ce104a84675ab6e8cd59c650a49106a05f55f136425e73
   timecop (0.9.11) sha256=41284dc6e5041f2184f781ace766f942108c842f8d8c1386a26e6343decc7542
   timecop-rspec (1.0.3) sha256=005f14841bb606dcaefb060e321b5388e2e59537742bee8b3a9a9a40e598fab9
