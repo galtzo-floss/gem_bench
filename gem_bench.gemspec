@@ -167,10 +167,6 @@ Gem::Specification.new do |spec|
   # spec.add_development_dependency("vcr", ">= 4")                        # 6.0 claims to support ruby >= 2.3, but fails on ruby 2.4
   # spec.add_development_dependency("webmock", ">= 3")                    # Last version to support ruby >= 2.3
   spec.add_development_dependency("method_source", ">= 1.1.0")
-  spec.add_development_dependency("rspec", "~> 3.13")
-  spec.add_development_dependency("rspec-block_is_expected", "~> 1.0", ">= 1.0.6")
-  spec.add_development_dependency("rubocop-lts", "~> 10.1") # Lint & Style Support for Ruby 2.3+
-  spec.add_development_dependency("rubocop-packaging", "~> 0.5", ">= 0.5.2")
-  spec.add_development_dependency("standard", "~> 1.40")
-  spec.add_development_dependency("yard", "~> 0.9", ">= 0.9.34")
+  # Team specs evaluate test-unit from the bundle, so it must be installed with it.
+  spec.add_development_dependency("test-unit", "~> 3.6")                          # ruby >= 0
 end
