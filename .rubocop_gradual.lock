@@ -24,8 +24,8 @@
     [76, 13, 2, "Lint/LtsRuby/UnavailableMethod: Method/Proc#<< is unavailable before Ruby 2.6.", 5859461],
     [102, 13, 4, "Lint/LtsRuby/UnavailableMethod: Symbol#name is unavailable before Ruby 3.0.", 2087876002]
   ],
-  "gemfiles/ancient.gemfile:1614051642": [
-    [25, 56, 8, "Lint/LtsRuby/UnavailableMethod: String/Symbol#casecmp? is unavailable before Ruby 2.4.", 4035388528]
+  "gemfiles/ancient.gemfile:1565925675": [
+    [23, 56, 8, "Lint/LtsRuby/UnavailableMethod: String/Symbol#casecmp? is unavailable before Ruby 2.4.", 4035388528]
   ],
   "gemfiles/modular/coverage_local.gemfile:2661471746": [
     [19, 27, 4, "Lint/LtsRuby/UnavailableMethod: Symbol#name is unavailable before Ruby 3.0.", 2087876002],
