@@ -1,12 +1,3 @@
-GIT
-  remote: https://github.com/pboling/rubocop-packaging.git
-  revision: 3539ba858d379740d638566faee9e56b2b854145
-  ref: 3539ba858d379740d638566faee9e56b2b854145
-  specs:
-    rubocop-packaging (0.6.0)
-      lint_roller (~> 1.1.0)
-      rubocop (>= 1.72.1, < 2.0)
-
 PATH
   remote: .
   specs:
@@ -596,7 +587,7 @@ GEM
       rspec-core (~> 3.0)
       ruby_engine (~> 2.0)
       ruby_version (~> 1.0)
-    rspec-stubbed_env (1.0.14)
+    rspec-stubbed_env (1.0.15)
     rspec-support (3.13.7)
     rspec_junit_formatter (0.6.0)
       rspec-core (>= 2, < 4, != 2.12.0)
@@ -629,10 +620,6 @@ GEM
       parallel (~> 1.10)
       rainbow (>= 2.2.2, < 4.0)
       rubocop (~> 1.0)
-    rubocop-lts (10.3.3)
-      rubocop-ruby2_3 (~> 3.0, >= 3.0.7)
-      standard-rubocop-lts (~> 2.0, >= 2.0.13)
-      version_gem (~> 1.1, >= 1.1.15)
     rubocop-lts-rspec (1.0.6)
       rubocop (~> 1.84, >= 1.84.2)
       rubocop-env (~> 0.1, >= 0.1.0)
@@ -706,7 +693,7 @@ GEM
       simplecov (>= 0.4.1)
     simplecov_lcov_formatter (0.9.0)
       simplecov (>= 0.18)
-    sorbet-runtime (0.6.13509)
+    sorbet-runtime (0.6.13511)
     standard (1.56.0)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.0)
@@ -805,7 +792,7 @@ DEPENDENCIES
   addressable (>= 2.8, < 3)
   anonymous_loader (~> 0.1, >= 0.1.3)
   appraisal2 (~> 3.2, >= 3.2.3)
-  appraisal2-rubocop (~> 1.0, >= 1.0.2)
+  appraisal2-rubocop (~> 1.0, >= 1.0.4)
   ast-crispr!
   ast-crispr-markdown-markly!
   ast-crispr-ruby-prism!
@@ -829,7 +816,7 @@ DEPENDENCIES
   irb (~> 1.17)
   json-merge!
   kettle-changelog!
-  kettle-dev (~> 3.1, >= 3.1.0)!
+  kettle-dev (~> 3.1, >= 3.1.5)!
   kettle-drift!
   kettle-family (~> 1.3, >= 1.3.1)
   kettle-jem!
@@ -853,17 +840,14 @@ DEPENDENCIES
   reek (~> 6.5, >= 6.5.0)
   require_bench (~> 1.0, >= 1.0.4)
   rubocop-gradual (~> 0.4, >= 0.4.0)
-  rubocop-lts (~> 10.3, >= 10.3.3)
   rubocop-lts-rspec (~> 1.0, >= 1.0.6)
   rubocop-minitest (~> 0.40, >= 0.40.0)
-  rubocop-on-rbs (~> 2.0, >= 2.0.0)
-  rubocop-packaging!
+  rubocop-on-rbs (~> 2.2, >= 2.2.0)
   rubocop-ruby2_3 (~> 3.0, >= 3.0.7)
   ruby-merge!
   ruby-progressbar (~> 1.13)
   rust-merge!
   smorg-rb!
-  standard (~> 1.56, >= 1.56.0)
   stone_checksums (~> 1.0, >= 1.0.9)
   stringio (>= 3.0)
   test-unit (~> 3.6)
@@ -1007,7 +991,7 @@ CHECKSUMS
   rspec-expectations (3.13.5) sha256=33a4d3a1d95060aea4c94e9f237030a8f9eae5615e9bd85718fe3a09e4b58836
   rspec-mocks (3.13.8) sha256=086ad3d3d17533f4237643de0b5c42f04b66348c28bf6b9c2d3f4a3b01af1d47
   rspec-pending_for (0.1.28) sha256=c499acef2b528398ee7441d48930d536e6bf4301d7f8e2b9ac78e204fea9eef3
-  rspec-stubbed_env (1.0.14) sha256=509f0a168d9c44578b5319b03ebe380fb1d9fbb82493d2d3f8d3040e2f4356a0
+  rspec-stubbed_env (1.0.15)
   rspec-support (3.13.7) sha256=0640e5570872aafefd79867901deeeeb40b0c9875a36b983d85f54fb7381c47c
   rspec_junit_formatter (0.6.0) sha256=40dde674e6ae4e6cc0ff560da25497677e34fefd2338cc467a8972f602b62b15
   rubocop (1.88.2) sha256=8def251c90cd955feb4daa3edc0ab56893250c4ce90ef81e6c80c03f9a939bbf
@@ -1016,13 +1000,11 @@ CHECKSUMS
   rubocop-env (0.1.0) sha256=5ab9a259e71822bf514c8e900a9b68cc2f74ccc87d5493efcd03213f3068e718
   rubocop-factory_bot (2.28.0) sha256=4b17fc02124444173317e131759d195b0d762844a71a29fe8139c1105d92f0cb
   rubocop-gradual (0.4.0) sha256=9c7e584e6fef6c2539266a193a4572c970c22f99046fd6b0305bdde6228f96ad
-  rubocop-lts (10.3.3) sha256=82d3dbef7034537706e75e3ec5eb1c61524a5944005d5e15f6c9b4f0dc693c9f
   rubocop-lts-rspec (1.0.6) sha256=b7f7dae919c9712dee09df76b027563e154f510d9b4423bb0453394b5474cf38
   rubocop-lts-ruby (0.1.4) sha256=eb0039d61d645d2b6754abd4006842945b7848a916a664f522f5e2f7a5a69bf1
   rubocop-md (2.0.4) sha256=0d076b6b5e99dea2ddc928c4bd702497decb9a8400da7808091e02ebcafcfb93
   rubocop-minitest (0.40.0) sha256=353c698199115f12151144cf0b5a96f69bb9d77b660cf6536df2c4250c672a9d
   rubocop-on-rbs (2.2.0) sha256=a78c1fa10fd9d78e26a9de67e9428a1ef6b5dc3b61e3db69e201222ccd588cf5
-  rubocop-packaging (0.6.0)
   rubocop-performance (1.26.1) sha256=cd19b936ff196df85829d264b522fd4f98b6c89ad271fa52744a8c11b8f71834
   rubocop-rake (0.7.1) sha256=3797f2b6810c3e9df7376c26d5f44f3475eda59eb1adc38e6f62ecf027cbae4d
   rubocop-rspec (3.10.2) sha256=0b3e2ecc592cd10ecbf0095bb58d1e357905276e069643523cc19eb7495f65e2
@@ -1043,7 +1025,7 @@ CHECKSUMS
   simplecov-rcov (0.3.7) sha256=372f50bf6df6b6350b7d0c840f2f8bdabe021861a43c26877b747c9ac96139fc
   simplecov_lcov_formatter (0.9.0) sha256=4c1839bb31dcf7a8f7a6474c94ed228aa03b994e9dd5e1965e58b4121b049bed
   smorg-rb (7.1.10)
-  sorbet-runtime (0.6.13509) sha256=87f3668ddb19c47fbd3004414c639fe557974147b7bc79c850004face0151777
+  sorbet-runtime (0.6.13511)
   standard (1.56.0) sha256=ae2af4d9669589162ac69ed5ef59dcf9f346d4afc81f7e62b84339310dfcb787
   standard-custom (1.0.2) sha256=424adc84179a074f1a2a309bb9cf7cd6bfdb2b6541f20c6bf9436c0ba22a652b
   standard-performance (1.9.0) sha256=49483d31be448292951d80e5e67cdcb576c2502103c7b40aec6f1b6e9c88e3f2
