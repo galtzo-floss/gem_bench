@@ -70,9 +70,32 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 and <a href="https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html">yes</a>, platform and engine support are part of the <a href="https://github.com/semver/semver/issues/716#issuecomment-869336139">public API</a>.<br>
 Please file a bug if you notice a violation of semantic versioning.</p>
 
-<h2 id="unreleased">[Unreleased]</h2>
+<h2 id="unreleased"><a href="https://github.com/galtzo-floss/gem_bench/compare/v2.0.6...HEAD">Unreleased</a></h2>
 
 <h3 id="added">Added</h3>
+
+<h3 id="changed">Changed</h3>
+
+<h3 id="deprecated">Deprecated</h3>
+
+<h3 id="removed">Removed</h3>
+
+<h3 id="fixed">Fixed</h3>
+
+<h3 id="security">Security</h3>
+
+<h2 id="206---2026-10-01">
+<a href="https://github.com/galtzo-floss/gem_bench/compare/v2.0.5...v2.0.6">2.0.6</a> - 2026-10-01</h2>
+
+<ul>
+  <li>TAG: <a href="https://github.com/galtzo-floss/gem_bench/releases/tag/v2.0.6">v2.0.6</a>
+</li>
+  <li>COVERAGE: 99.60% – 502/504 lines in 9 files</li>
+  <li>BRANCH COVERAGE: 93.71% – 164/175 branches in 9 files</li>
+  <li>60.00% documented</li>
+</ul>
+
+<h3 id="added-1">Added</h3>
 
 <ul>
   <li>kettle-jem-template-20260720-005 - README Support &amp; Community links now<br>
@@ -80,11 +103,19 @@ include RubyForum.</li>
   <li>kettle-jem-template-20260726-001 - Projects now include YARD lint<br>
 configuration and documentation dependencies so documentation issues fail<br>
 before generated docs are refreshed.</li>
-  <li>kettle-jem-template-20260727-001 - Spec harness documentation now lists the<br>
-RSpec helpers provided by <code>kettle-test</code>.</li>
+  <li>
+    <p>kettle-jem-template-20260727-001 - Spec harness documentation now lists the<br>
+RSpec helpers provided by <code>kettle-test</code>.</p>
+  </li>
+  <li>kettle-jem-template-20260913-001 - Templating now also surfaces a review<br>
+entry in <code>dependency_conflicts.resolve</code> when a direct development<br>
+dependency doesn’t support one or more of this project’s declared<br>
+<code>engines:</code> and has no template-managed modular home (e.g. <code>sqlite3</code> on<br>
+<code>jruby</code>). Review each entry and pick a resolution per the project’s own<br>
+engine support needs.</li>
 </ul>
 
-<h3 id="changed">Changed</h3>
+<h3 id="changed-1">Changed</h3>
 
 <ul>
   <li>kettle-jem-template-20260716-002 - Gemspecs now ship fewer repository-only<br>
@@ -103,9 +134,9 @@ use ClickGems instead of BestGems.</p>
 setup-ruby-flash planning and can prepare appraisal-only jobs without<br>
 installing the main Gemfile bundle.</p>
   </li>
-  <li>[kc] kettle-jem/prepare: updated 11 project files:
+  <li>[kc] kettle-jem/prepare: updated 16 project files:
     <ul>
-      <li>dependencies (11)</li>
+      <li>dependencies (16)</li>
     </ul>
   </li>
   <li>[kc] kettle-jem/template: updated 8 project files:
@@ -116,11 +147,7 @@ installing the main Gemfile bundle.</p>
   </li>
 </ul>
 
-<h3 id="deprecated">Deprecated</h3>
-
-<h3 id="removed">Removed</h3>
-
-<h3 id="fixed">Fixed</h3>
+<h3 id="fixed-1">Fixed</h3>
 
 <ul>
   <li>kettle-jem-template-20260720-003 - StructuredMerge Git diff driver config now<br>
@@ -167,38 +194,50 @@ failures against <code>gem.coop</code>.</p>
 preserving comments and trailing commas during template updates.</li>
 </ul>
 
-<h3 id="security">Security</h3>
-
 <h2 id="205-sep212024">[2.0.5] SEP.21.2024</h2>
+
 <ul>
   <li>COVERAGE:  99.80% – 495/496 lines in 9 files</li>
   <li>BRANCH COVERAGE:  94.35% – 167/177 branches in 9 files</li>
-  <li>58.87% documented
-    <h3 id="added-1">Added</h3>
-  </li>
+  <li>58.87% documented</li>
+</ul>
+
+<h3 id="added-2">Added</h3>
+
+<ul>
   <li>More specs</li>
   <li>More documentation</li>
-  <li>0.2% remaining to 100% test coverage (line)
-    <h3 id="fixed-1">Fixed</h3>
-  </li>
+  <li>0.2% remaining to 100% test coverage (line)</li>
+</ul>
+
+<h3 id="fixed-2">Fixed</h3>
+
+<ul>
   <li>Documentation errors</li>
   <li>Minor improvements to logic and performance (a bit more idiomatic Ruby)</li>
 </ul>
 
 <h2 id="204-sep202024">[2.0.4] SEP.20.2024</h2>
+
 <ul>
   <li>COVERAGE:  98.19% – 488/497 lines in 9 files</li>
   <li>BRANCH COVERAGE:  88.95% – 161/181 branches in 9 files</li>
-  <li>58.06% documented
-    <h3 id="added-2">Added</h3>
-  </li>
+  <li>58.06% documented</li>
+</ul>
+
+<h3 id="added-3">Added</h3>
+
+<ul>
   <li>More documentation</li>
   <li>1.81% remaining to 100% test coverage (line)</li>
   <li>Thread safety (removed <code>GemBench.roster</code>, which was effectively never used internally)</li>
   <li>Performance improvements</li>
-  <li>Support for specifying arbitrary <code>:gemfile_path</code> in most class initializers
-    <h3 id="fixed-2">Fixed</h3>
-  </li>
+  <li>Support for specifying arbitrary <code>:gemfile_path</code> in most class initializers</li>
+</ul>
+
+<h3 id="fixed-3">Fixed</h3>
+
+<ul>
   <li>Can now handle more variations of Ruby syntax in the Gemfile analyzer</li>
   <li>
 <code>require_relative</code> &gt; <code>require</code> for internal files (except for <code>spec</code> =&gt; <code>lib</code>)</li>
@@ -212,22 +251,31 @@ preserving comments and trailing commas during template updates.</li>
 </ul>
 
 <h2 id="203-sep182024">[2.0.3] SEP.18.2024</h2>
-<h3 id="added-3">Added</h3>
+
+<h3 id="added-4">Added</h3>
+
 <ul>
-  <li>More documentation
-    <h3 id="fixed-3">Fixed</h3>
-  </li>
+  <li>More documentation</li>
+</ul>
+
+<h3 id="fixed-4">Fixed</h3>
+
+<ul>
   <li>Typos in documentation</li>
   <li>Copyright years</li>
 </ul>
 
 <h2 id="202-sep172024">[2.0.2] SEP.17.2024</h2>
+
 <ul>
   <li>COVERAGE:  82.15% – 382/465 lines in 9 files</li>
   <li>BRANCH COVERAGE:  58.79% – 97/165 branches in 9 files</li>
-  <li>51.72% documented
-    <h3 id="added-4">Added</h3>
-  </li>
+  <li>51.72% documented</li>
+</ul>
+
+<h3 id="added-5">Added</h3>
+
+<ul>
   <li>CI for Ancient Rubies
     <ul>
       <li>Ruby 2.3</li>
@@ -236,20 +284,27 @@ preserving comments and trailing commas during template updates.</li>
       <li>Ruby 2.6</li>
     </ul>
   </li>
-  <li>More &amp; improved documentation
-    <h3 id="fixed-4">Fixed</h3>
-  </li>
+  <li>More &amp; improved documentation</li>
+</ul>
+
+<h3 id="fixed-5">Fixed</h3>
+
+<ul>
   <li>Typo in URL in documentation</li>
   <li>Gemspec description &amp; Summary</li>
 </ul>
 
 <h2 id="201-sep172024">[2.0.1] SEP.17.2024</h2>
+
 <ul>
   <li>COVERAGE:  82.15% – 382/465 lines in 9 files</li>
   <li>BRANCH COVERAGE:  58.08% – 97/167 branches in 9 files</li>
-  <li>51.72% documented
-    <h3 id="added-5">Added</h3>
-  </li>
+  <li>51.72% documented</li>
+</ul>
+
+<h3 id="added-6">Added</h3>
+
+<ul>
   <li>Ability to re-namespace and load copy of a gem alongside vanilla version for benchmarking via <code>GemBench::Jersey</code>
     <ul>
       <li>See: https://github.com/panorama-ed/memo_wise/pull/339</li>
@@ -259,17 +314,26 @@ preserving comments and trailing commas during template updates.</li>
   <li>
 <code>kettle-soup-cover</code> for test coverage enforcement</li>
   <li>Better documentation</li>
-  <li>Improved instructions for contributing
-    <h3 id="changed-1">Changed</h3>
-  </li>
+  <li>Improved instructions for contributing</li>
+</ul>
+
+<h3 id="changed-2">Changed</h3>
+
+<ul>
   <li>Improved <code>bin/checksums</code>
-    <h3 id="fixed-5">Fixed</h3>
-  </li>
+</li>
+</ul>
+
+<h3 id="fixed-6">Fixed</h3>
+
+<ul>
   <li>Stopped swallowing <code>ArgumentError</code> in certain exceptional cases</li>
 </ul>
 
 <h2 id="200-sep252023">[2.0.0] SEP.25.2023</h2>
-<h3 id="added-6">Added</h3>
+
+<h3 id="added-7">Added</h3>
+
 <ul>
   <li>Compatible with Bundler 2+</li>
   <li>Checksums for release
@@ -281,38 +345,48 @@ preserving comments and trailing commas during template updates.</li>
   <li>Signed releases</li>
   <li>Add CODE_OF_CONDUCT.md</li>
   <li>Add SECURITY.md (Security policy)</li>
-  <li>Github Actions
-    <h3 id="changed-2">Changed</h3>
-  </li>
+  <li>Github Actions</li>
+</ul>
+
+<h3 id="changed-3">Changed</h3>
+
+<ul>
   <li>Dropped support for Ruby 2.0, 2.1, and 2.2</li>
   <li>
 <code>VERSION</code> constant now lives at <code>GemBench::Version::VERSION</code>, enhanced by <code>version_gem</code>
 </li>
-  <li>Changelog updated to Keep-a-changelog format (going forward)
-    <h3 id="removed-1">Removed</h3>
-  </li>
+  <li>Changelog updated to Keep-a-changelog format (going forward)</li>
+</ul>
+
+<h3 id="removed-1">Removed</h3>
+
+<ul>
   <li>Removed Appraisals</li>
   <li>Removed Travis-CI</li>
 </ul>
 
 <h2 id="106-sep092018">[1.0.6] SEP.09.2018</h2>
+
 <ul>
   <li>Documentation improvements</li>
   <li>Add Ruby 2.5 to build matrix</li>
 </ul>
 
 <h2 id="105-jun052017">[1.0.5] JUN.05.2017</h2>
+
 <ul>
   <li>Allow github macro as an alternative to git within Gemfile for strict version constraint analysis</li>
 </ul>
 
 <h2 id="103-jun022017">[1.0.3] JUN.02.2017</h2>
+
 <ul>
   <li>fixed accidental removal of loaded_gems in 1.0.2</li>
   <li>better documentation</li>
 </ul>
 
 <h2 id="102-jun022017">[1.0.2] JUN.02.2017</h2>
+
 <ul>
   <li>version constraint checking, useful to add a spec enforcing Gemfile version constraints, by Peter Boling
     <ul>
@@ -335,11 +409,13 @@ end
 </ul>
 
 <h2 id="101-mar252017">[1.0.1] MAR.25.2017</h2>
+
 <ul>
   <li>fixed a typo that prevented Gemfile comparison by mobilutz</li>
 </ul>
 
 <h2 id="100-feb262017">[1.0.0] FEB.26.2017</h2>
+
 <ul>
   <li>New feature: scan all code (except for test/spec/feature code) in all loaded gems for a given regex:
     <ul>
@@ -361,6 +437,7 @@ end
 </ul>
 
 <h2 id="008-jan162014">[0.0.8] JAN.16.2014</h2>
+
 <ul>
   <li>Corrected issues with 0.0.7 release.</li>
   <li>More Documentation</li>
@@ -368,6 +445,7 @@ end
 </ul>
 
 <h2 id="007-dec232013-yanked-immediately">[0.0.7] DEC.23.2013 (Yanked immediately)</h2>
+
 <ul>
   <li>Attempt to fix failure on encoding problem, with a rescue fallback (Issue #1) by Peter Boling</li>
   <li>Readme / Documentation improvements by John Bachir</li>
@@ -375,36 +453,43 @@ end
 </ul>
 
 <h2 id="006-aug292013">[0.0.6] AUG.29.2013</h2>
+
 <ul>
   <li>Added license to gemspec by Peter Boling</li>
   <li>No longer altering Ruby load path - Let the gem manager do that by Peter Boling</li>
 </ul>
 
 <h2 id="005-aug282013">[0.0.5] AUG.28.2013</h2>
+
 <ul>
   <li>Encode as UTF-8 prior to comparison by Peter Boling</li>
 </ul>
 
 <h2 id="004-apr062013">[0.0.4] APR.06.2013</h2>
+
 <ul>
   <li>Expanded exclusion list by Peter Boling</li>
 </ul>
 
 <h2 id="003-apr062013">[0.0.3] APR.06.2013</h2>
+
 <ul>
   <li>Late night coding needs more coffee by Peter Boling</li>
 </ul>
 
 <h2 id="002-apr062013">[0.0.2] APR.06.2013</h2>
+
 <ul>
   <li>Works against 265 dependency Gemfile by Peter Boling</li>
   <li>Added ability to evaluate a Gemfile by Peter Boling</li>
 </ul>
 
 <h2 id="001-apr052013">[0.0.1] APR.05.2013</h2>
+
 <ul>
   <li>Initial release by Peter Boling</li>
 </ul>
+
 </div></div>
 
       <div id="footer">
