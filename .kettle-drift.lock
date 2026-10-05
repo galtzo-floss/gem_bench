@@ -1,13 +1,4 @@
 {
-  "- 51.72% documented\n### Added": [
-    {
-      "file": "CHANGELOG.md",
-      "lines": [
-        143,
-        158
-      ]
-    }
-  ],
   "- gem: rubocop-lts\ndirect: gem_bench.gemspec": [
     {
       "file": ".structuredmerge/kettle-jem.yml",
@@ -21,8 +12,8 @@
     {
       "file": ".structuredmerge/kettle-jem.yml",
       "lines": [
-        124,
-        129
+        119,
+        124
       ]
     }
   ],
@@ -51,8 +42,7 @@
         112,
         117,
         122,
-        127,
-        132
+        127
       ]
     }
   ],
@@ -61,7 +51,7 @@
       "file": ".structuredmerge/kettle-jem.yml",
       "lines": [
         110,
-        125
+        120
       ]
     }
   ],
@@ -70,35 +60,16 @@
       "file": ".structuredmerge/kettle-jem.yml",
       "lines": [
         115,
-        120,
-        130
+        125
       ]
     }
   ],
-  "eval_gemfile \"gemfiles/modular/json/truffleruby_22_3.gemfile\"\neval_gemfile \"gemfiles/modular/json/truffleruby_23_0.gemfile\"": [
+  "exec_cmd: \"kettle-test\"\nrubygems: latest": [
     {
-      "file": "Appraisal.root.gemfile",
+      "file": ".github/workflows/current.yml",
       "lines": [
-        21,
-        26
-      ]
-    }
-  ],
-  "eval_gemfile \"gemfiles/modular/json/truffleruby_23_0.gemfile\"\neval_gemfile \"gemfiles/modular/json/truffleruby_23_1.gemfile\"": [
-    {
-      "file": "Appraisal.root.gemfile",
-      "lines": [
-        22,
-        27
-      ]
-    }
-  ],
-  "if respond_to?(:generator_only)\ngenerator_only do": [
-    {
-      "file": "Appraisal.root.gemfile",
-      "lines": [
-        19,
-        32
+        43,
+        49
       ]
     }
   ],
@@ -107,7 +78,7 @@
       "file": ".structuredmerge/kettle-jem.yml",
       "lines": [
         111,
-        126
+        121
       ]
     }
   ],
@@ -116,8 +87,7 @@
       "file": ".structuredmerge/kettle-jem.yml",
       "lines": [
         116,
-        121,
-        131
+        126
       ]
     }
   ],
@@ -125,8 +95,8 @@
     {
       "file": ".structuredmerge/kettle-jem.yml",
       "lines": [
-        123,
-        128
+        118,
+        123
       ]
     }
   ]
