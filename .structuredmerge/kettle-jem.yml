@@ -116,11 +116,6 @@ dependency_conflicts:
       modular: gemfiles/modular/style.gemfile
       action: remove_modular_gem
       reason: "The gemspec owns the project's style dependency."
-    - gem: rubocop-packaging
-      direct: gem_bench.gemspec
-      modular: gemfiles/modular/style.gemfile
-      action: remove_modular_gem
-      reason: "The gemspec owns the project's style dependency."
     - gem: standard
       direct: gem_bench.gemspec
       modular: gemfiles/modular/shunted.gemfile
