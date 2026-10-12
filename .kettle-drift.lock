@@ -64,12 +64,12 @@
       ]
     }
   ],
-  "exec_cmd: \"kettle-test\"\nrubygems: latest": [
+  "id: bundleAppraisalAttempt2\nif: ${{ !env.ACT && steps.bundleAppraisalAttempt1.outcome == 'failure' }}": [
     {
-      "file": ".github/workflows/current.yml",
+      "file": ".github/workflows/heads.yml",
       "lines": [
-        43,
-        49
+        136,
+        196
       ]
     }
   ],
@@ -97,6 +97,15 @@
       "lines": [
         118,
         123
+      ]
+    }
+  ],
+  "run: bundle exec appraisal ${{ matrix.appraisal }} install\ncontinue-on-error: true": [
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        132,
+        192
       ]
     }
   ]

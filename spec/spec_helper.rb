@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # External library dependencies
 require "version_gem/ruby"
 

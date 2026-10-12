@@ -29,8 +29,8 @@ concurrency:
 jobs:
   test:
     if: "github.event_name != 'push' || (!contains(github.event.head_commit.message, '[ci skip]') && !contains(github.event.head_commit.message, '[skip ci]'))"
-    name: Specs ${{ matrix.ruby }}@${{ matrix.appraisal }}
-    runs-on: ubuntu-latest
+    name: Specs ${{ matrix.os }} ${{ matrix.ruby }}@${{ matrix.appraisal }}
+    runs-on: ${{ matrix.os }}
     env: # $BUNDLE_GEMFILE must be set at job level, so it is set for all steps
       BUNDLE_GEMFILE: ${{ github.workspace }}/Appraisal.root.gemfile
     strategy:
@@ -39,6 +39,13 @@ jobs:
           # Ruby 4.0
           - ruby: "ruby"
             appraisal: "current"
+            os: ubuntu-latest
+            exec_cmd: "kettle-test"
+            rubygems: latest
+            bundler: latest
+          - ruby: "ruby"
+            appraisal: "current"
+            os: macos-latest
             exec_cmd: "kettle-test"
             rubygems: latest
             bundler: latest
@@ -77,10 +84,10 @@ jobs:
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: .rspec_status
-          key: rspec-status-current-${{matrix.ruby}}-${{matrix.appraisal}}-${{hashFiles('**/Gemfile.lock','Appraisal.root.gemfile','gemfiles/**/*.gemfile')}}-${{github.run_id}}-${{github.run_attempt}}
+          key: rspec-status-current-${{matrix.os}}-${{matrix.ruby}}-${{matrix.appraisal}}-${{hashFiles('**/Gemfile.lock','Appraisal.root.gemfile','gemfiles/**/*.gemfile')}}-${{github.run_id}}-${{github.run_attempt}}
           restore-keys: |
-            rspec-status-current-${{matrix.ruby}}-${{matrix.appraisal}}-${{hashFiles('**/Gemfile.lock','Appraisal.root.gemfile','gemfiles/**/*.gemfile')}}-
-            rspec-status-current-${{matrix.ruby}}-${{matrix.appraisal}}-
+            rspec-status-current-${{matrix.os}}-${{matrix.ruby}}-${{matrix.appraisal}}-${{hashFiles('**/Gemfile.lock','Appraisal.root.gemfile','gemfiles/**/*.gemfile')}}-
+            rspec-status-current-${{matrix.os}}-${{matrix.ruby}}-${{matrix.appraisal}}-
 
-      - name: Tests for ${{ matrix.ruby }} via ${{ matrix.exec_cmd }}
-        run: bundle exec appraisal ${{ matrix.appraisal }} bundle exec ${{ matrix.exec_cmd }}
+      - name: Tests for ${{ matrix.os }} ${{ matrix.ruby }} via ${{ matrix.exec_cmd }}
+        run: bundle exec appraisal ${{ matrix.appraisal }} ${{ matrix.exec_cmd }}
