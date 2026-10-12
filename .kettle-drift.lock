@@ -1,22 +1,4 @@
 {
-  "- gem: rubocop-lts\ndirect: gem_bench.gemspec": [
-    {
-      "file": ".structuredmerge/kettle-jem.yml",
-      "lines": [
-        109,
-        114
-      ]
-    }
-  ],
-  "- gem: standard\ndirect: gem_bench.gemspec": [
-    {
-      "file": ".structuredmerge/kettle-jem.yml",
-      "lines": [
-        119,
-        124
-      ]
-    }
-  ],
   "- ruby: \"ruby\"\nappraisal: \"current\"": [
     {
       "file": ".github/workflows/current.yml",
@@ -44,17 +26,6 @@
       ]
     }
   ],
-  "action: remove_modular_gem\nreason: \"The gemspec owns the project's style dependency.\"": [
-    {
-      "file": ".structuredmerge/kettle-jem.yml",
-      "lines": [
-        112,
-        117,
-        122,
-        127
-      ]
-    }
-  ],
   "config: .licenserc.yaml\nmode: \"check\"": [
     {
       "file": ".github/workflows/license-eye.yml",
@@ -64,57 +35,12 @@
       ]
     }
   ],
-  "direct: gem_bench.gemspec\nmodular: gemfiles/modular/shunted.gemfile": [
-    {
-      "file": ".structuredmerge/kettle-jem.yml",
-      "lines": [
-        110,
-        120
-      ]
-    }
-  ],
-  "direct: gem_bench.gemspec\nmodular: gemfiles/modular/style.gemfile": [
-    {
-      "file": ".structuredmerge/kettle-jem.yml",
-      "lines": [
-        115,
-        125
-      ]
-    }
-  ],
   "exec_cmd: \"kettle-test\"\nrubygems: latest": [
     {
       "file": ".github/workflows/current.yml",
       "lines": [
         43,
         49
-      ]
-    }
-  ],
-  "modular: gemfiles/modular/shunted.gemfile\naction: remove_modular_gem": [
-    {
-      "file": ".structuredmerge/kettle-jem.yml",
-      "lines": [
-        111,
-        121
-      ]
-    }
-  ],
-  "modular: gemfiles/modular/style.gemfile\naction: remove_modular_gem": [
-    {
-      "file": ".structuredmerge/kettle-jem.yml",
-      "lines": [
-        116,
-        126
-      ]
-    }
-  ],
-  "reason: \"The gemspec owns the project's style dependency.\"\n- gem: standard": [
-    {
-      "file": ".structuredmerge/kettle-jem.yml",
-      "lines": [
-        118,
-        123
       ]
     }
   ]

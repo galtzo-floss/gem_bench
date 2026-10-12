@@ -581,6 +581,10 @@ GEM
       parallel (~> 1.10)
       rainbow (>= 2.2.2, < 4.0)
       rubocop (~> 1.0)
+    rubocop-lts (10.3.3)
+      rubocop-ruby2_3 (~> 3.0, >= 3.0.7)
+      standard-rubocop-lts (~> 2.0, >= 2.0.13)
+      version_gem (~> 1.1, >= 1.1.15)
     rubocop-lts-rspec (1.0.7)
       rubocop (~> 1.84, >= 1.84.2)
       rubocop-env (~> 0.1, >= 0.1.0)
@@ -804,6 +808,7 @@ DEPENDENCIES
   reek (~> 6.6, >= 6.6.0)
   require_bench (~> 1.0, >= 1.0.4)
   rubocop-gradual (~> 0.4, >= 0.4.0)
+  rubocop-lts (~> 10.3, >= 10.3.3)
   rubocop-lts-rspec (~> 1.0, >= 1.0.7)
   rubocop-minitest (~> 0.40, >= 0.40.0)
   rubocop-on-rbs (~> 2.2, >= 2.2.0)
@@ -813,6 +818,7 @@ DEPENDENCIES
   ruby-progressbar (~> 1.13)
   rust-merge!
   smorg-rb!
+  standard (~> 1.57, >= 1.57.0)
   stone_checksums (~> 1.0, >= 1.0.9)
   stringio (>= 3.0)
   test-unit (~> 3.6)
@@ -823,6 +829,7 @@ DEPENDENCIES
   webrick (~> 1.9)
   yaml-converter (~> 0.2, >= 0.2.7)
   yaml-merge!
+  yard (~> 0.9, >= 0.9.45)
   yard-fence!
   yard-junk (~> 0.1, >= 0.1.0)
   yard-lint (~> 1.12, >= 1.12.0)
@@ -957,6 +964,7 @@ CHECKSUMS
   rubocop-env (0.1.0) sha256=5ab9a259e71822bf514c8e900a9b68cc2f74ccc87d5493efcd03213f3068e718
   rubocop-factory_bot (2.28.0) sha256=4b17fc02124444173317e131759d195b0d762844a71a29fe8139c1105d92f0cb
   rubocop-gradual (0.4.0) sha256=9c7e584e6fef6c2539266a193a4572c970c22f99046fd6b0305bdde6228f96ad
+  rubocop-lts (10.3.3)
   rubocop-lts-rspec (1.0.7) sha256=7bf96c2745b9d000f418ab739f27a11037ba2b1dc4980aff53bbc9fec2ac4272
   rubocop-lts-ruby (0.1.5) sha256=09c47d2d666693ee759e1d5549e5534a5465f10e2580fbf9049c8a341a04999e
   rubocop-md (2.0.4) sha256=0d076b6b5e99dea2ddc928c4bd702497decb9a8400da7808091e02ebcafcfb93

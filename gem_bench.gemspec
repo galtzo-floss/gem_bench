@@ -66,7 +66,7 @@ Gem::Specification.new do |spec|
   gemspec_root = __dir__
   relative_package_path = lambda do |path|
     prefix = "#{gemspec_root}/"
-    path[0, prefix.length] == prefix ? path[prefix.length..-1] : path
+    (path[0, prefix.length] == prefix) ? path[prefix.length..-1] : path
   end
   enumerate_package_glob = lambda do |glob|
     files = []

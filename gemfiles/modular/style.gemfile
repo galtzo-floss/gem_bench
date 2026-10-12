@@ -23,6 +23,8 @@ platform :mri do
   if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.3.0")
     gem "rubocop-on-rbs", "~> 2.2", ">= 2.2.0"      # ruby >= 3.3.0
   end
+  # gem "rubocop", "~> 1.73", ">= 1.73.2" # constrained by standard
+  gem "standard", "~> 1.57", ">= 1.57.0"
 
   if ENV.fetch("RUBOCOP_LTS_DEV", "false").casecmp("false").zero?
     gem "rubocop-packaging",
