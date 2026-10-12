@@ -29,6 +29,7 @@ platform :mri do
       github: "pboling/rubocop-packaging",
       ref: "3539ba858d379740d638566faee9e56b2b854145"
     declared_gems = instance_variable_get(:@dependencies).to_a.map(&:name)
+    gem "rubocop-lts", "~> 10.3", ">= 10.3.3" unless declared_gems.include?("rubocop-lts")
     gem "rubocop-lts-rspec", "~> 1.0", ">= 1.0.7" unless declared_gems.include?("rubocop-lts-rspec")
     gem "rubocop-ruby2_3", "~> 3.0", ">= 3.0.7" unless declared_gems.include?("rubocop-ruby2_3")
   else
