@@ -17,12 +17,21 @@
       ]
     }
   ],
+  "- ruby: \"ruby\"\nappraisal: \"current\"": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        40,
+        46
+      ]
+    }
+  ],
   ">> team = GemBench.check({verbose: true})\n[GemBench] Will search for gems in [\"/Users/pboling/.rvm/gems/ruby-1.9.3-head@foss/gems\", \"/Users/pboling/.rvm/gems/ruby-1.9.3-head@global/gems\", \"/Users/pboling/.rvm/gems/ruby-1.9.3-head@foss/bundler/gems\"]": [
     {
       "file": "README.md",
       "lines": [
-        209,
-        228
+        226,
+        245
       ]
     }
   ],
@@ -30,8 +39,8 @@
     {
       "file": "README.md",
       "lines": [
-        210,
-        229
+        227,
+        246
       ]
     }
   ],
@@ -43,6 +52,15 @@
         117,
         122,
         127
+      ]
+    }
+  ],
+  "config: .licenserc.yaml\nmode: \"check\"": [
+    {
+      "file": ".github/workflows/license-eye.yml",
+      "lines": [
+        49,
+        62
       ]
     }
   ],
@@ -64,12 +82,12 @@
       ]
     }
   ],
-  "id: bundleAppraisalAttempt2\nif: ${{ !env.ACT && steps.bundleAppraisalAttempt1.outcome == 'failure' }}": [
+  "exec_cmd: \"kettle-test\"\nrubygems: latest": [
     {
-      "file": ".github/workflows/heads.yml",
+      "file": ".github/workflows/current.yml",
       "lines": [
-        136,
-        196
+        43,
+        49
       ]
     }
   ],
@@ -97,15 +115,6 @@
       "lines": [
         118,
         123
-      ]
-    }
-  ],
-  "run: bundle exec appraisal ${{ matrix.appraisal }} install\ncontinue-on-error: true": [
-    {
-      "file": ".github/workflows/heads.yml",
-      "lines": [
-        132,
-        192
       ]
     }
   ]
