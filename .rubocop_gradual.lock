@@ -1,4 +1,7 @@
 {
+  "gemfiles/modular/style_local.gemfile:803618203": [
+    [71, 23, 20, "Style/SafeNavigation: Use safe navigation (`&.`) instead of checking if an object exists before calling the method.", 1851388465]
+  ],
   "lib/gem_bench/strict_version_requirement.rb:1358447646": [
     [46, 20, 3, "Style/MapJoin: Remove redundant `map(&:to_s)` before `join`.", 193414073]
   ],
