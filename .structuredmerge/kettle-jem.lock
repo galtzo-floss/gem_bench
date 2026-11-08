@@ -217,7 +217,7 @@ template_state:
     gemfiles/modular/style.gemfile.example: bb5e3dc3ce3b5459e689b93ad3800671e21d969b1ef26d846bf7cec0d2d2720a
     gemfiles/modular/style_local.gemfile.example: 8b0b3929d2853604ad23524bc9b1e3fa1bec0c5bebb003a435092ca9947a5b44
     gemfiles/modular/templating.gemfile.example: ac12cbc9b3923539792c188a0e1faab7ee2228a4852d074d993f502db2aba47d
-    gemfiles/modular/templating_local.gemfile.example: 2e5fbc7ae453a1d48bdbd24fa1d97db1037b8fb785de81b03f77db4a5c612a08
+    gemfiles/modular/templating_local.gemfile.example: 3287e43d54fde93e6787f9e4928c1efb8180b4244f47f84a0220a45b098385d4
     gemfiles/modular/webrick/r4/v1.9.gemfile.example: 1ee940ff54d5ca3ce7fcff0d82ee9553386979656b9e220d5be5404d0991d5ea
     gemfiles/modular/webrick/vHEAD.gemfile.example: 9d76734cc744f53d6bdf2035a1d97e64ce628065c1114f4021827c922fdffb4b
     gemfiles/modular/x_std_libs.gemfile.example: e3917e90717d7f9f4393d847549a78c53de7f6c8de52a7f590b34b515fd6111a
@@ -726,7 +726,7 @@ files:
   CHANGELOG.md:
     recipe: template_source_application_CHANGELOG_md
     action: write
-    dest_sha256: cae137bc6b9df3f43a325293941ed44ce49bfb1ac8f304a0cd2d5e404383b3eb
+    dest_sha256: fc2bc259cb6b40c83519a9da852181513f7be8e0e2377dc37d3a354a3214c11b
     input_fingerprint: 0ddabdb55b8137a67e1291aeaa43c63875868bacc69dfeb2faeab2cb38f4b6b0
     template_sources:
     - CHANGELOG.md.example
@@ -1104,8 +1104,8 @@ files:
   gemfiles/modular/templating_local.gemfile:
     recipe: template_source_application_gemfiles_modular_templating_local_gemfile
     action: write
-    dest_sha256: b75c19d1c55ea10fee6ec578b6148cf73922f750419a3951e0beb92b899b29d7
-    input_fingerprint: 831b20f04e31332959173d81982a503bb6b0aaff5371f1938da100adb66f3ed2
+    dest_sha256: 72b4b8101925c814a1c98a71a76f5617aceef8e05725a378496185e5e1111c0c
+    input_fingerprint: d2c53a464c0e00274f5132c78c8be56eb517c37d81447bd64cafb0d60a3e608c
     template_sources:
     - gemfiles/modular/templating_local.gemfile.example
   gemfiles/modular/webrick/r4/v1.9.gemfile:
