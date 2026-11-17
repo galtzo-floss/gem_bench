@@ -22,17 +22,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- [kc] kettle-jem/prepare: updated 29 project files:
-  - configuration (2)
-  - dependencies (27)
-
-- [kc] kettle-jem/template: updated 43 project files:
-  - code and tests (1)
-  - dependencies (8)
-  - documentation (1)
-  - other (4)
-  - workflows (29)
-
 ### Deprecated
 
 ### Removed
@@ -41,11 +30,11 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Security
 
-## [2.0.6] - 2026-10-01
+## [2.0.6] - 2026-11-17
 
 - TAG: [v2.0.6][2.0.6t]
-- COVERAGE: 99.60% -- 502/504 lines in 9 files
-- BRANCH COVERAGE: 93.71% -- 164/175 branches in 9 files
+- COVERAGE: 99.01% -- 499/504 lines in 9 files
+- BRANCH COVERAGE: 91.43% -- 160/175 branches in 9 files
 - 60.00% documented
 
 ### Added
@@ -81,12 +70,15 @@ Please file a bug if you notice a violation of semantic versioning.
   setup-ruby-flash planning and can prepare appraisal-only jobs without
   installing the main Gemfile bundle.
 
-- [kc] kettle-jem/prepare: updated 16 project files:
-  - dependencies (16)
-
-- [kc] kettle-jem/template: updated 8 project files:
-  - dependencies (7)
-  - other (1)
+- [kc] kettle-jem/prepare: updated 45 project files:
+  - configuration (2)
+  - dependencies (43)
+- [kc] kettle-jem/template: updated 51 project files:
+  - code and tests (1)
+  - dependencies (15)
+  - documentation (1)
+  - other (5)
+  - workflows (29)
 
 ### Fixed
 
